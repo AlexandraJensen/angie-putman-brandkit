@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANGIE PUTMAN ARTISTRY — Brand Kit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --void: #060609;
+            --hot: #E8284A;
+            --magenta: #D42878;
+            --violet: #7028E8;
+            --teal: #18D8C8;
+            --gold: #E8B828;
+            --ice: #28B8E8;
+            --white: #F8F4F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--void);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--void);
+        }
+
+        .hero-blobs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(40px);
+            opacity: 0.7;
+        }
+
+        .blob-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--hot), var(--magenta));
+            border-radius: 47% 53% 52% 48% / 48% 47% 53% 52%;
+            top: 10%;
+            left: 10%;
+            animation: blob-float 8s ease-in-out infinite;
+        }
+
+        .blob-2 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, var(--violet), var(--teal));
+            border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+            top: 60%;
+            right: 10%;
+            animation: blob-float 10s ease-in-out infinite reverse;
+        }
+
+        .blob-3 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--teal), var(--ice));
+            border-radius: 71% 29% 66% 34% / 42% 58% 42% 58%;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: blob-float 12s ease-in-out infinite;
+        }
+
+        @keyframes blob-float {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(30px, -50px);
+            }
+            66% {
+                transform: translate(-30px, 50px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1000px;
+            padding: 0 40px;
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(60px, 12vw, 180px);
+            font-weight: 700;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--hot) 50%, var(--violet) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+            animation: fade-in-up 1.2s ease-out;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(16px, 2vw, 24px);
+            letter-spacing: 2px;
+            color: var(--ice);
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+            animation: fade-in-up 1.2s ease-out 0.2s both;
+        }
+
+        .hero-tagline {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(24px, 3vw, 48px);
+            color: var(--hot);
+            margin: 30px 0;
+            font-weight: 700;
+            animation: fade-in-up 1.2s ease-out 0.4s both;
+        }
+
+        .hero-descriptor {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(14px, 1.5vw, 18px);
+            color: var(--teal);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            animation: fade-in-up 1.2s ease-out 0.6s both;
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* PORTFOLIO SECTION */
+        .portfolio {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(44px, 5vw, 72px);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hot), var(--violet), var(--teal));
+            margin: 20px auto 0;
+        }
+
+        .disciplines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .discipline-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            padding: 40px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: slide-in 0.8s ease-out forwards;
+        }
+
+        .discipline-card:nth-child(1) {
+            animation-delay: 0.1s;
+            background: linear-gradient(135deg, rgba(232, 40, 74, 0.3), rgba(212, 40, 120, 0.3));
+            border: 1px solid var(--hot);
+        }
+
+        .discipline-card:nth-child(2) {
+            animation-delay: 0.2s;
+            background: linear-gradient(135deg, rgba(112, 40, 232, 0.3), rgba(200, 40, 150, 0.3));
+            border: 1px solid var(--magenta);
+        }
+
+        .discipline-card:nth-child(3) {
+            animation-delay: 0.3s;
+            background: linear-gradient(135deg, rgba(24, 216, 200, 0.3), rgba(112, 40, 232, 0.3));
+            border: 1px solid var(--teal);
+        }
+
+        .discipline-card:nth-child(4) {
+            animation-delay: 0.4s;
+            background: linear-gradient(135deg, rgba(232, 184, 40, 0.3), rgba(24, 216, 200, 0.3));
+            border: 1px solid var(--gold);
+        }
+
+        .discipline-card:nth-child(5) {
+            animation-delay: 0.5s;
+            background: linear-gradient(135deg, rgba(40, 184, 232, 0.3), rgba(232, 40, 74, 0.3));
+            border: 1px solid var(--ice);
+        }
+
+        .discipline-card:nth-child(6) {
+            animation-delay: 0.6s;
+            background: linear-gradient(135deg, rgba(232, 40, 74, 0.3), rgba(40, 184, 232, 0.3));
+            border: 1px solid var(--hot);
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .discipline-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(232, 40, 74, 0.2);
+        }
+
+        .discipline-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(24px, 3vw, 32px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .discipline-card p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: var(--white);
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* INSTAGRAM SECTION */
+        .instagram-showcase {
+            padding: 80px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(232, 40, 74, 0.05);
+            border-radius: 20px;
+            margin-top: 60px;
+        }
+
+        .instagram-showcase h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(32px, 4vw, 48px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .instagram-placeholder {
+            background: linear-gradient(135deg, var(--hot), var(--violet));
+            aspect-ratio: 1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            color: var(--white);
+        }
+
+        /* FACEBOOK COVER MOCKUP */
+        .facebook-section {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .facebook-mockup {
+            background: linear-gradient(135deg, var(--hot), var(--magenta), var(--violet));
+            aspect-ratio: 820 / 312;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 80px rgba(232, 40, 74, 0.3);
+        }
+
+        .facebook-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+        }
+
+        .facebook-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .facebook-content p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .facebook-mockup::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        /* BRAND GUIDE */
+        .brand-guide {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        .color-swatch {
+            text-align: center;
+        }
+
+        .swatch-box {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(248, 244, 240, 0.1);
+        }
+
+        .color-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .color-code {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        .typography-section {
+            margin-bottom: 100px;
+        }
+
+        .typography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .font-specimen {
+            border-bottom: 2px solid rgba(232, 40, 74, 0.3);
+            padding-bottom: 30px;
+        }
+
+        .font-specimen h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--teal);
+            margin-bottom: 20px;
+        }
+
+        .specimen-bebas {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .specimen-montserrat {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .specimen-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .specimen-caveat {
+            font-family: 'Caveat', cursive;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        /* BRAND PRINCIPLES */
+        .principles-section {
+            padding: 120px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .principle {
+            background: rgba(232, 40, 74, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--hot);
+            transition: all 0.3s ease;
+        }
+
+        .principle:nth-child(even) {
+            border-left-color: var(--violet);
+        }
+
+        .principle:nth-child(3n) {
+            border-left-color: var(--teal);
+        }
+
+        .principle:hover {
+            background: rgba(232, 40, 74, 0.15);
+            transform: translateX(8px);
+        }
+
+        .principle-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            color: var(--hot);
+            margin-bottom: 10px;
+        }
+
+        .principle-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--white);
+        }
+
+        /* PLATFORM STRATEGY */
+        .platform-section {
+            padding: 120px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .platform-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 60px;
+        }
+
+        .platform-text h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--hot);
+        }
+
+        .platform-text ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .platform-text li {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--white);
+        }
+
+        .platform-text li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: bold;
+        }
+
+        .export-table {
+            background: rgba(232, 40, 74, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(232, 40, 74, 0.2);
+        }
+
+        .export-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .export-table th {
+            background: rgba(232, 40, 74, 0.2);
+            padding: 20px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--teal);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .export-table td {
+            padding: 18px 20px;
+            border-top: 1px solid rgba(232, 40, 74, 0.1);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: var(--white);
+        }
+
+        .export-table td:nth-child(1) {
+            font-weight: 600;
+            color: var(--ice);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 60px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(232, 40, 74, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--hot);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--ice);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .platform-content {
+                grid-template-columns: 1fr;
+            }
+
+            .disciplines-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 0 20px;
+            }
+
+            .portfolio {
+                padding: 60px 20px;
+            }
+
+            .facebook-mockup {
+                aspect-ratio: auto;
+                min-height: 300px;
+            }
+
+            .facebook-content h1 {
+                font-size: 40px;
+            }
+
+            .facebook-content p {
+                font-size: 14px;
+            }
+        }
+
+        /* SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+        <h1 class="hero-title">ANGIE</h1>
+        <p class="hero-subtitle">PUTMAN ARTISTRY</p>
+        <p class="hero-tagline">Look what I can do...</p>
+        <p class="hero-descriptor">Airbrush · Body Paint · Any Surface</p>
+    </div>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<section class="portfolio">
+    <h2 class="section-title">The Work</h2>
+
+    <div class="disciplines-grid">
+        <div class="discipline-card">
+            <h3>Body Paint</h3>
+            <p>UV & neon full-body art, glow-in-the-dark performances, and custom body canvas designs that transform the human form into living artwork.</p>
+        </div>
+        <div class="discipline-card">
+            <h3>SFX & Prosthetics</h3>
+            <p>Monster designs, realistic wounds, horror makeup, and prosthetic application for film, theater, and extreme character work.</p>
+        </div>
+        <div class="discipline-card">
+            <h3>Drag & Glam</h3>
+            <p>Editorial beauty looks, drag makeup artistry, high-fashion editorial work, and avant-garde character design.</p>
+        </div>
+        <div class="discipline-card">
+            <h3>Surface Art</h3>
+            <p>Custom airbrush work on skateboards, helmets, shoes, leather jackets, and bespoke wearable art pieces.</p>
+        </div>
+        <div class="discipline-card">
+            <h3>Murals & Canvas</h3>
+            <p>Large-scale airbrush paintings, wall murals, canvas art, and custom home decor pieces using advanced airbrush technique.</p>
+        </div>
+        <div class="discipline-card">
+            <h3>Face Paint</h3>
+            <p>Festival face art, body painting events, corporate activations, kids entertainment, and creative party experiences.</p>
+        </div>
+    </div>
+
+    <div class="instagram-showcase">
+        <h2>Featured Work</h2>
+        <p style="text-align: center; font-family: 'Montserrat', sans-serif; margin-bottom: 30px; color: rgba(248,244,240,0.6); font-size: 15px;">Live from @angiespamakeup — scroll to explore</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CzB9u9pJFBi/" data-instgrm-version="14" style="background: #111; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; max-width: 540px; min-width: 280px; width: 100%; margin: 0 auto;">
+                <a href="https://www.instagram.com/p/CzB9u9pJFBi/" target="_blank" style="color: var(--teal); text-decoration: none; display: block; padding: 40px; text-align: center; font-family: 'Montserrat', sans-serif;">View UV Body Paint on Instagram</a>
+            </blockquote>
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DPb1_kgkio5/" data-instgrm-version="14" style="background: #111; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; max-width: 540px; min-width: 280px; width: 100%; margin: 0 auto;">
+                <a href="https://www.instagram.com/p/DPb1_kgkio5/" target="_blank" style="color: var(--hot); text-decoration: none; display: block; padding: 40px; text-align: center; font-family: 'Montserrat', sans-serif;">View Latest Work on Instagram</a>
+            </blockquote>
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DPYBfyhDqiz/" data-instgrm-version="14" style="background: #111; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; max-width: 540px; min-width: 280px; width: 100%; margin: 0 auto;">
+                <a href="https://www.instagram.com/p/DPYBfyhDqiz/" target="_blank" style="color: var(--violet); text-decoration: none; display: block; padding: 40px; text-align: center; font-family: 'Montserrat', sans-serif;">View Portfolio on Instagram</a>
+            </blockquote>
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DBZhIUqTcdN/" data-instgrm-version="14" style="background: #111; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; max-width: 540px; min-width: 280px; width: 100%; margin: 0 auto;">
+                <a href="https://www.instagram.com/p/DBZhIUqTcdN/" target="_blank" style="color: var(--gold); text-decoration: none; display: block; padding: 40px; text-align: center; font-family: 'Montserrat', sans-serif;">View Featured Work on Instagram</a>
+            </blockquote>
+        </div>
+        <script async src="//www.instagram.com/embed.js"></script>
+        <p style="text-align: center; font-family: 'Montserrat', sans-serif; margin-top: 40px; font-size: 16px;">
+            Follow <a href="https://instagram.com/angiespamakeup" target="_blank" style="color: var(--teal); text-decoration: none;">@angiespamakeup</a> for daily content and process reels
+        </p>
+    </div>
+</section>
+
+<!-- FACEBOOK COVER SECTION -->
+<section class="facebook-section">
+    <h2 class="section-title">Facebook Cover Banner</h2>
+    <p style="text-align: center; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; color: var(--teal); font-size: 16px;">
+        820 × 312 pixels — Standard Facebook Cover Dimensions
+    </p>
+    <div class="facebook-mockup">
+        <div class="facebook-content">
+            <h1>ANGIE</h1>
+            <p>Airbrush · Body Paint · SFX · Murals · Custom</p>
+        </div>
+    </div>
+</section>
+
+<!-- BRAND GUIDE -->
+<section class="brand-guide">
+    <h2 class="section-title">Brand Guide</h2>
+
+    <div style="margin-top: 80px;">
+        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; color: var(--white);">Color Palette</h3>
+        <div class="color-palette">
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: var(--void); border: 2px solid var(--white);"></div>
+                <div class="color-name">Void</div>
+                <div class="color-code">#060609</div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: var(--hot);"></div>
+                <div class="color-name">Hot</div>
+                <div class="color-code">#E8284A</div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: var(--magenta);"></div>
+                <div class="color-name">Magenta</div>
+                <div class="color-code">#D42878</div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: var(--violet);"></div>
+                <div class="color-name">Violet</div>
+                <div class="color-code">#7028E8</div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: var(--teal);"></div>
+                <div class="color-name">Teal</div>
+                <div class="color-code">#18D8C8</div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: var(--gold);"></div>
+                <div class="color-name">Gold</div>
+                <div class="color-code">#E8B828</div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: var(--ice);"></div>
+                <div class="color-name">Ice</div>
+                <div class="color-code">#28B8E8</div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-box" style="background: var(--white);"></div>
+                <div class="color-name">White</div>
+                <div class="color-code">#F8F4F0</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="typography-section">
+        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; color: var(--white);">Typography</h3>
+        <div class="typography-grid">
+            <div class="font-specimen">
+                <h3>Bebas Neue</h3>
+                <div class="specimen-bebas">HERO HEADLINES</div>
+                <p style="font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--teal);">Bold, dynamic headlines and titles</p>
+            </div>
+            <div class="font-specimen">
+                <h3>Montserrat</h3>
+                <div class="specimen-montserrat">Subheads & UI Elements</div>
+                <p style="font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--teal);">Clean, modern interface text</p>
+            </div>
+            <div class="font-specimen">
+                <h3>Cormorant Garamond</h3>
+                <div class="specimen-cormorant">Body & Editorial Copy</div>
+                <p style="font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--teal);">Elegant serif for longer form</p>
+            </div>
+            <div class="font-specimen">
+                <h3>Caveat</h3>
+                <div class="specimen-caveat">Handwritten Accents</div>
+                <p style="font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--teal);">Personal, artistic touches</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BRAND PRINCIPLES -->
+<section class="principles-section">
+    <h2 class="section-title">Brand Principles</h2>
+    <div class="principles-grid">
+        <div class="principle reveal">
+            <div class="principle-number">01</div>
+            <div class="principle-text">Lead with artistry, not services</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">02</div>
+            <div class="principle-text">Airbrush is the differentiator — always mention it</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">03</div>
+            <div class="principle-text">Show range: skin, wood, fabric, metal, walls</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">04</div>
+            <div class="principle-text">UV/blacklight work is the signature wow factor</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">05</div>
+            <div class="principle-text">Portfolio-first: let the work speak</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">06</div>
+            <div class="principle-text">Price for art, not for parties</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">07</div>
+            <div class="principle-text">One brand, one handle, one voice</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">08</div>
+            <div class="principle-text">Dark backgrounds make neon pop</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">09</div>
+            <div class="principle-text">Every photo tells a story — context matters</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">10</div>
+            <div class="principle-text">Calgary proud, globally ambitious</div>
+        </div>
+        <div class="principle reveal">
+            <div class="principle-number">11</div>
+            <div class="principle-text">"Look what I can do..." is an invitation, not a boast</div>
+        </div>
+    </div>
+</section>
+
+<!-- PLATFORM STRATEGY -->
+<section class="platform-section">
+    <h2 class="section-title">Platform Strategy</h2>
+    <div class="platform-content">
+        <div class="platform-text">
+            <h3>Consolidation</h3>
+            <p style="margin-bottom: 30px; color: var(--white);">Currently fragmented across 4 pages. Recommended strategy: consolidate to @angieputman.art as the primary hub.</p>
+
+            <h3 style="margin-top: 40px;">Instagram (@angiespamakeup)</h3>
+            <ul>
+                <li>Daily process reels and time-lapses</li>
+                <li>Before/after transformations</li>
+                <li>Client reactions and testimonials</li>
+                <li>Surface variety showcases</li>
+                <li>Behind-the-scenes studio content</li>
+                <li>Collaboration highlights</li>
+            </ul>
+
+            <h3>Facebook</h3>
+            <ul>
+                <li>Community engagement and events</li>
+                <li>Customer testimonials</li>
+                <li>Local Calgary networking</li>
+                <li>Long-form storytelling</li>
+            </ul>
+
+            <h3>TikTok (New Channel)</h3>
+            <ul>
+                <li>Speed painting reels</li>
+                <li>Trend participation with art twist</li>
+                <li>Challenge content</li>
+                <li>Quick tutorials and tips</li>
+            </ul>
+        </div>
+
+        <div class="export-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Dimension</th>
+                        <th>Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Facebook Cover</td>
+                        <td>820 × 312 px</td>
+                        <td>Profile header, brand showcase</td>
+                    </tr>
+                    <tr>
+                        <td>Instagram Post</td>
+                        <td>1080 × 1080 px</td>
+                        <td>Portfolio, process, testimonials</td>
+                    </tr>
+                    <tr>
+                        <td>Instagram Story</td>
+                        <td>1080 × 1920 px</td>
+                        <td>Behind-the-scenes, daily updates</td>
+                    </tr>
+                    <tr>
+                        <td>Website Hero</td>
+                        <td>1920 × 600 px</td>
+                        <td>Portfolio landing page header</td>
+                    </tr>
+                    <tr>
+                        <td>YouTube Thumbnail</td>
+                        <td>1280 × 720 px</td>
+                        <td>Process videos, tutorials</td>
+                    </tr>
+                    <tr>
+                        <td>TikTok Video</td>
+                        <td>1080 × 1920 px</td>
+                        <td>Vertical speed paints, trends</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>ANGIE PUTMAN ARTISTRY</p>
+    <p>Calgary-Based Airbrush & Body Paint Artist</p>
+    <p style="margin-top: 20px;">
+        Instagram: <a href="https://instagram.com/angiespamakeup" target="_blank">@angiespamakeup</a> ·
+        Facebook: <a href="https://facebook.com/search/top/?q=calgary%20face%20painting%20and%20body%20artist" target="_blank">Calgary Face Painting and Body Artist</a>
+    </p>
+    <p style="margin-top: 20px; font-size: 12px; color: var(--white); opacity: 0.7;">Brand Kit Created 2026 | Look what I can do...</p>
+</footer>
+
+<script>
+    // Scroll Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+        revealElements.forEach(element => {
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');1
+              
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Smooth scroll enhancement
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
