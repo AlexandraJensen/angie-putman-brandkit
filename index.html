@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ANGIE PUTMAN ARTISTRY — Airbrush · Body Paint · Any Surface</title>
-<meta name="description" content="Angie Putman — Calgary's premier airbrush and body paint artist. SFX, body paint, illusion art, UV paint, face paint. Any surface is her canvas.">
+<meta name="description" content="Angie Putman — Calgary airbrush and body paint artist. SFX, body paint, illusion art, UV paint, face paint. Any surface is her canvas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -49,28 +49,13 @@ section{padding:5rem 2rem}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4rem);text-align:center;letter-spacing:.1em;margin-bottom:.3em}
 .section-subtitle{text-align:center;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;opacity:.5;margin-bottom:3rem}
 
-/* GALLERY */
-.gallery-nav{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
-.gallery-btn{background:none;border:1px solid rgba(248,244,240,.15);color:var(--white);padding:.5rem 1.2rem;border-radius:2rem;font-family:'Montserrat',sans-serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s}
-.gallery-btn:hover,.gallery-btn.active{border-color:var(--teal);color:var(--teal);background:rgba(24,216,200,.08)}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;max-width:1200px;margin:0 auto}
-.gallery-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:auto;cursor:pointer;transition:transform .4s}
-.gallery-item:hover{transform:scale(1.02)}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.gallery-item:hover img{transform:scale(1.08)}
-.gallery-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,6,9,.85) 0%,transparent 50%);opacity:0;transition:opacity .4s;display:flex;align-items:flex-end;padding:1.2rem}
-.gallery-item:hover .gallery-overlay{opacity:1}
-.gallery-label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
-
-/* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(6,6,9,.95);justify-content:center;align-items:center;cursor:zoom-out}
-.lightbox.open{display:flex}
-.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px}
-.lightbox-close{position:absolute;top:1.5rem;right:2rem;color:var(--white);font-size:2rem;cursor:pointer;opacity:.6;transition:opacity .3s;z-index:201}
-.lightbox-close:hover{opacity:1}
+/* INSTAGRAM GRID (THE WORK) */
+.work-section{background:rgba(248,244,240,.02);padding:5rem 2rem}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;max-width:1300px;margin:0 auto}
+.work-grid blockquote{max-width:100% !important;min-width:0 !important;margin:0 !important;width:100% !important}
 
 /* ABOUT */
-.about-wrap{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:3rem;text-align:center}
+.about-wrap{max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:3rem;text-align:center}
 .about-text p{line-height:1.9;font-size:1rem;margin-bottom:1.5rem;opacity:.85}
 .about-text .highlight{color:var(--teal);font-weight:400}
 .about-stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
@@ -107,25 +92,18 @@ footer .social a{opacity:.4;transition:opacity .3s;font-size:.8rem;letter-spacin
 footer .social a:hover{opacity:1}
 footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
 
-/* INSTAGRAM SECTION */
-.insta-section{background:rgba(248,244,240,.02);padding:4rem 2rem}
-.insta-grid{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;max-width:1200px;margin:0 auto}
-.insta-grid blockquote{max-width:280px !important;min-width:280px !important;margin:0 !important}
-
 /* RESPONSIVE */
 @media(max-width:768px){
   .nav-links{gap:1rem}
   .nav-links a{font-size:.65rem}
-  .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
   .about-stats{gap:1.5rem}
   section{padding:3rem 1.2rem}
   .services-grid{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){
   .nav-links{display:none}
-  .gallery-grid{grid-template-columns:1fr 1fr;gap:.5rem}
-  .gallery-nav{gap:.5rem}
-  .gallery-btn{padding:.4rem .8rem;font-size:.65rem}
+  .work-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -159,117 +137,32 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
   <div class="hero-scroll"><span></span>&#8595;</div>
 </section>
 
-<!-- THE WORK -->
-<section id="work">
+<!-- THE WORK (Instagram Embeds) -->
+<section id="work" class="work-section">
   <h2 class="section-title">THE WORK</h2>
   <p class="section-subtitle">Every surface is a canvas</p>
-  
-  <div class="gallery-nav">
-    <button class="gallery-btn active" data-filter="all">All</button>
-    <button class="gallery-btn" data-filter="bodypaint">Body Paint</button>
-    <button class="gallery-btn" data-filter="sfx">SFX & Prosthetics</button>
-    <button class="gallery-btn" data-filter="illusion">Illusion</button>
-    <button class="gallery-btn" data-filter="uv">UV / Blacklight</button>
-    <button class="gallery-btn" data-filter="facepaint">Face Paint</button>
-  </div>
-  
-  <div class="gallery-grid">
-    <div class="gallery-item" data-cat="bodypaint" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQAEADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAQIDBAUA/8QAJBAAAgIBAwQDAQEAAAAAAAAAAAECESEDEjFEQVFhIjKBcRP/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAGREBAQEBAQEAAAAAAAAAAAAAAAEREjEh/9oADAMBAAIRAxEAPwCVYB5DJqKpC9hKMnn+hwuHgW6CnaALKUlG1lHl1MOJJ34oMNzqlZaMEuyTfdIfKe9c/V3aktyg0v4KdNmbqNOLTkuQCMnirDXxXsR8BX1EoZfVDwjaTEeI+i2jmCvyETbi8Irb6GbFTwsAbvgpIuRHUlaK9iUksiOMqYG/CGjG3Q8dPEr7NAad2slIehuimlVF9PThOLTWUNO6CndBQk9KUM8oaDtALBnKomX/AFblkvqO0ZXF2I4r06Tm78GhxWV5IdL9maZoFMzS3Jz4K9PP5L3gWW2V3z3Fitkv2ymd+NrISilJ06LN0rM8pbnj9JaSaDyiU1gu1glNYBOZS9K6mzU3awQ6WFRcu7Kz+MGwUyzk1qtlK3RuMlXszt22x9N29r/A3CyX1q1NTdFJCxwsiKG132KInWngrKFmsZ4HQmo01h8DlRY//9k=" alt="Body Paint — Surreal Landscape" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Body Paint — Surreal Landscape</span></div>
-    </div>
-    <div class="gallery-item" data-cat="sfx" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADwDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAQIDAAT/xAAlEAACAgICAgEEAwQAAAAAAAAAAQIRAxESMUFRIhNCYYEycaH/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AuwSk1VIljy8u9MezKmUkxZZVHrbMkZwTBE1mm30iiyS+6DVBjGKekK0km7soMpatMmouW1tBtaWkmOtKkBz4yltAceOWl1QzQRSL+KD5ESerejN712Ghk1Fe2Lvz0Cmnbuwq2ETyLyu+x4ytJiZHVDwVQQRmuMm7VAc1GmCW0TydIDoeSnpCXev9BjmuFyv1od1JWnoNDf7vVAuKdASq/wAdCLttgU4qTbfjoblXkVSVV5J5f5foJQcqFnNySVKkAHkqK4GtqilRitcv6s54S4SpdpUm2SLRcxY/KVB+lLt6GilDbAKlU6kqEy28jphk7TbOcqH8ijAABbE9V6Ij4pVKvYFnOXVibvY35JznWl37IoZJfaiZjFR//9k=" alt="SFX — Demon Prosthetics" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">SFX — Demon Prosthetics</span></div>
-    </div>
-    <div class="gallery-item" data-cat="bodypaint" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABHAFADASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMCBAH/xAAoEAACAgEDAwQCAwMAAAAAAAAAAQIRAxIhMVFhcQQTIkEygSNioeH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABcRAQEBAQAAAAAAAAAAAAAAAAARAXH/2gAMAwEAAhEDEQA/AOI0l8G/uzJrG6mt9nswMgrKMdVSbTNRxJNb6u1FglGEp8LbqalhnF06vyde6jSq6JrHcXJtJWIOeWOcVbWxg64TqWm+fol6jF7ck1w/8EEkup4e2eEAApFavpP90BrHmlSjV9Cqkqt3JvpwYemEKkqv6RhT2qCrzuUdCq9SVUruxGMapK0+SGptbtvsE2r+XIMab/mpLbsUcoZE4TdPyRjGT/F14JSTi6YF9HtQnrkmmtkupzgEA94dngA1q/qjULkyZuDdbOkgL+1tfP7DxqjMMk1SW66M3bk6dJvgq15gWr9E/Ux05PJb0sbT7Mn6x/NII5wAQAAALwjFaU74vYgdeNRnGMrXFNFwK07rhmZvbf8AJ8I25KK1bv6Xc1CGlrJkf/Bi8eYIPHibntZzZpasja4LZc6kmltFcdzlGoAAgAAAbg9O7VoACyy4Y/JLfwTyZpZOyXCALRIAEAAAf//Z" alt="Body Paint — Koi Maternity" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Body Paint — Koi Maternity</span></div>
-    </div>
-    <div class="gallery-item" data-cat="uv" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADUDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAIEAwEF/8QAKRAAAgIBAwMDAwUAAAAAAAAAAQIAERMSMVEEIUEiMmEjcYETMzRCof/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgP/xAAbEQEBAAIDAQAAAAAAAAAAAAAAARFBAiExEv/aAAwDAQACEQMRAD8AdvE1UhVJOwmZ8RyurEy8iXSRZH/WyWdvE4raHDL45gUKGiCDHUAWKBYzXRKMXU376/EZciP7T+JMqHUQYKtEV27yfmBcNoTo2EJkbA7CaptMzsJm3VooIUFpV7Berb6gHEwX9wVtdxXyHI5Jja9AoefMqXoYa22sFtz3qbphIa2r4qT4idYZuZdYYWIcrgnRCEJkafOdOBjI1I2Ci+TK+p/jn8SLmaQ4ceu/B5h6V9wvgTqClJqdCjJzUMqwcgEEA6Zt07UdF3feTtqNY1JLTuK1fGykkeYei4XwhCZpY5BqwsPieepF+qeiNpL1OIIdS+0n/ZpCIr6u19p1DVgmr2i4xtGfHQsD7948aXnbfAA2S1/rF6j6eQhe19xXM70LAM6nc94ucser9O4qLaasQ2gPxCdUUAITMMh7ZP1h7IPvKF2kvVHVkC8CaT0mSNRAJ2jLeVqulEVCPa9VzxOuSFKoAF+DvGej4yMedSp1Cb9OpfI2RvJupGlhgZ6eMVjHMm0GhCEgP//Z" alt="UV Blacklight — Baroque" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">UV Blacklight — Baroque</span></div>
-    </div>
-    <div class="gallery-item" data-cat="illusion" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADsDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAQIDAAT/xAAnEAACAgEDBAEEAwAAAAAAAAAAAQIRIQMSMQRBUWEyEyJxkRRSgf/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/EABcRAQEBAQAAAAAAAAAAAAAAAAABETH/2gAMAwEAAhEDEQA/AOdmUblQR9NUr8kKz04qgrAY/cnX7M/PsRLZUlCxHjsdDVJNYJakc3+wMqfJr/AKBXpipatG0Gc0lXktLpoxi5OTwrNHThKt0bJYloNO0Xad0DUhHT2uCSzWBnymLFIr2Pgm1qU3s+3yVly8DJ7tJ14oqY5voTk8SVew/wAaX90V073U+VgoDZ5rdCSXLRGDuSRcBBDqW1t2+yS1Z1TRXqV8X/hLlOqNSazRjqX8uUN00quL75Jd8lNL5r8FYV2AzAZKoLMAkXUjvi4nMsOnyuTps5JxcNRp8PuMuCnksWPo8t+hIu1Q+li0avBFGwAbAYaVsFgs1kmsTUSlHPbuMBrySc8ZZKx+eDnliTXgp9alUYjoxcXfBd0cznKXLABf/9k=" alt="Illusion — Painted Clothing" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Illusion — Painted Clothing</span></div>
-    </div>
-    <div class="gallery-item" data-cat="bodypaint" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEA8ADwAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADUDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAIEAQMF/8QAJxAAAgICAAUEAgMAAAAAAAAAAQIAERMhBBIxUXEiQWGRMoEzofH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/xAAYEQEBAQEBAAAAAAAAAAAAAAAAEQEhMf/aAAwDAQACEQMRAD8Arc8qk2B5krhixPsBfabkyHI9AenpXed1S1txsmzA+OSYCy2TV/ExsDr0o+Iz590v3Nx5rNN9y4euKkq3yJYNi5Ll/maUYjeMSWnhCEWU/CgUTW51ykjE1ThwzU1d5SwDKQfeB31ANmOJr4HVvSLEU3zV0IMGqGbmfwKlHDm1IkvVp3wkq4vo2ojVMIQiylyYGUlk2Duu05DIwOmIl8R8SP8Ako8yNRnI4o8x+5nv1O5Q/CqR6SQfmTMrIaYVA04Hq9vMbn1a73OYYUQek3VAg9JJcp5lB7wnHhm9BBPSEWXeEyEk2JkxrkXlb/I8JJ5rDlYqfbUwHcbiNZnPXcUbOhAmDctg3+oRWBhJR6NwsTYUIgWImTKuNbJ/UTPmXEKAtj/UhZyxsmzJGZ+Zye5uZddAYonRFZhpSZIviECdmEDX/9k=" alt="Body Paint — Skull & Lilies" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Body Paint — Skull & Lilies</span></div>
-    </div>
-    <div class="gallery-item" data-cat="sfx" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADUDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQT/xAAhEAACAgIBBQEBAAAAAAAAAAAAAQIRAyExEiJBUXFhkf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/ADhHNOXVItkfbRCO5qwMYKynTbdNB0quaZFTGi6aYSWxUEdS4ATHLtABcjsSCuY0xE6kmFWUVyuTFFO+fhu71tMFa8aAnNUqqhCmTaJganQGAENJ2L4NZgVTFKtMdp7Nxqou1YSaTpWEI4/0XoaRVO36NaT8gcwDSVOgClKY8d8ipW0jpjGio1LRKdOWn9ZV6WiMm/KSJQNVp8FI3VOrJW6VK2ysFUVfLECzhdAUAojhju/RcXEqgv0cBeSThu0/RZKloXp722QKlX02Ltb9hXda8g6X5YDoDIttAUf/2Q==" alt="SFX — Character Recreation" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">SFX — Character Recreation</span></div>
-    </div>
-    <div class="gallery-item" data-cat="facepaint" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADwDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAgMEAQAF/8QAJRAAAgICAgEEAwEBAAAAAAAAAQIAESExAxJBEyIyYVFxkUKh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERIUH/2gAMAwEAAhEDEQA/AGzhkzJ1m4IJW2MS/CwBKkERp5K0BcBgxB9wMmtAhpWWxe5wHYE9siYtAkHcwYbdSXgwtD3DMAGh+I0N0WwTjwYslL9xN/UgqmHU6cdRBKcTchJAxCbhYDUp4SDx4qhB5Xct1QYgUfQq1kYmEgHB/koa6pxRkrijYkdGWsVQH6i6vM6ydw3CgjepBVOVezVMh8PyJ/AiDQlA0AP1Eo7p81NE4ju64yMxXOCKF2pOoEtj2t28/wDIDqvpKxGTqH6asDWCNgxHKTYBOBI0BFQIwjH1BqIWQ+K1JNRiIF+/uYGH+tVJQPKocWmxFvyM3XsPifEd2UeYtupgcKUi2drwMCL5BdGG1XF8jHxJBB64M6oNHZhDUg9AvVCtmoBFtXgCZzEUCN3OZgOMkbaaZ7KIgdBXnMnANkShx7QBuhBbjs3+dSxokqYDIZUE8N/Zvp0dWIJAb8zRkSjl4qP1MXhtQesZBeP/2Q==" alt="Face Paint — Butterfly" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Face Paint — Butterfly</span></div>
-    </div>
-    <div class="gallery-item" data-cat="bodypaint" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBCAEIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAA1AFADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAmEAACAgEEAgEEAwAAAAAAAAAAAQIRIQMSMUFRYXEEEyIyQlKR/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAIBA//EABwRAQEAAgMBAQAAAAAAAAAAAAABAhESITETUf/aAAwDAQACEQMRAD8AalCvY7jWOSNntX8kptOuy7dIkax82EtSVYRSvbfC+AepXWCeUtbpnu8tlxSapxdeRxhFSTa56NnSWBln+ExYy0v6ienLyaOatfBE9REfSq4DbPP5Il6cu5iTlX6yE5Saxj5HOt4xCpdWJXKTSXPQUb6UdsbrLOmfiMQpSb29eB4pxrDM9TW2yddck/ft3GGfZy1XRvF2nFvKxZV2qbpmOmpJ7pdvJvSap5Moz+3i5SHCCxgpxXSRLmoJuXBh6qPCFJL4fkmE1NNZSQ8NU3aHgx0o7pW+EaybukKP4QSKiqzLkq3d2yTUStCNeX7Coue2qdDlrQj/AIRzamtc04p4Eto7NvgFLzyc8fqq5TY39RCXNiwdDdM5Nd3PDtVwE9aLVRv/AEzTS57Nxx7VFOVpKqSL0ZNW79UY7kuGS5Vw6KvZb0pa8/InqSlywAxKQAAALAAEAAaAQAGP/9k=" alt="Body Paint — Reclining Buddha" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Body Paint — Reclining Buddha</span></div>
-    </div>
-    <div class="gallery-item" data-cat="sfx" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADwDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAQIDBAAF/8QAJxAAAQQBAwMEAwEAAAAAAAAAAQACAxEhEjFBBBNhIjJRkVJxgfD/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/AMgTD3BKFq6dgA1OGeEGHiBDM4TFmobo2KOUvcaQM4RrWEdERZFEKUt+laDKBuaUpKecZymVmxBoGq1ZBrPVdplplK6O4VmhzqF0NsKTonXilqib6fKy0LYWjkpXQNOwVCKTDZBZZIayi1g7ZrlaHNsELO2wSPgpgtKAfH2jp8hcutIU0gZ3Svm7YoDJTZI3oBLJH3GggoIM6knBGUZJi0A0kDGsNuJNeE+uKQaaP6KgmOofvhUALwJOClEDD+QVJDojoZpKZ3OIJQ1lLZPBQz8H6QVZZTVXaEUj6c1tHmlI7posODuFJZtyxm97StjcXAHFKmijqZVHhDXJt2j9qTp3OZWl1LqJgcXHJFo9svc0yH+BL1MlWxu53SEaJaCLQp3+Kq0UKRx8IJAwcrnHBRvKDvapHgkHsd/CtIb+l5xKPqIJsmvKsTdK5sTbwTwFgLiXFx3K6yiQkLMcHDCKkxtuwrUhP//Z" alt="SFX — Exposed Skull" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">SFX — Exposed Skull</span></div>
-    </div>
-    <div class="gallery-item" data-cat="bodypaint" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAmgCaAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQAEADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgH/xAAqEAACAgEDAwMCBwAAAAAAAAAAAQIRAxIhMQQiQTJRYXGBEyMzkaHB0f/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABkRAQEBAQEBAAAAAAAAAAAAAAABEQIxEv/aAAwDAQACEQMRAD8AnH9Ns3L7E5R0/DQD5ccGK0z1ePJ1O5tGpJ2kuH/AGtmmSZ4rT2u/sNk3GVK6oxka0t/BmTG8TR4OnFwdNMAf03LED+n2Un4CNwl+bNP6m71TpPhEzlWa/kaubX+AtPpRjXLJ+ohWPihy1NK3wxXVT7dK8kvrU8SrgAAqAdiklikvIkdha/DZYluDFDXOUvYbSUop3p9wwKsSryadSpfATpq6dLgl6n9Tf2HKoRjtvtYjM9WVsla5LOAgAB2H0SEjen9UvoWM9eG4pNQSarbZnNVcP9jappx2aQqca3Qw+nZtr5QtNtN0Ck5dq5HqKjFIjUSNU6AZmhW4oDprHPRL4fJgAHwbXp3X9HZPwYwvuaG5KaLrN5JxOsqKlRFwyvHLVFMjTmZdpIXZK0Eckk3uB//Z" alt="Body Paint — Dual Portrait" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Body Paint — Dual Portrait</span></div>
-    </div>
-    <div class="gallery-item" data-cat="illusion" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADUDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAEDAgT/xAAlEAACAgICAgEEAwAAAAAAAAAAAQIRAyESUTFBYSIycaEEUoH/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A5NFMeaWNNJ1ZJgBpy5PYq6BbdFowTxt07IqA00xyVP4Yii2PBKcbirQElOUVSk0gIissPT30TeGXReTfGOXKo0zbCufFiblu0kblcVKJWmk2vJGTkpcnav2BLI/qroyayNNp+2towVGk+1YCACqi5q0/8srBt0mmmkSU48aqn2mJ+eUZb/JGo6XJRhbYJpwq7J4p8vu8oeSntOn8ERDKlqvBMqmnqS0Y477NBANQfQAh+RIa0kFr8BDun9OjSmlGjGqu99UD8gNtNNijYqsYG9e1+wMWAi0Lyb4/BRRUpcV93sosXzQRzVXkw1TOxwj72Q/kRUWmvYE4tJpuxHSsaeFX0QTgnUk/ygMgVrD/b9MAP/9k=" alt="Illusion — Painted Leather" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Illusion — Painted Leather</span></div>
-    </div>
-    <div class="gallery-item" data-cat="sfx" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADwDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAgMEAQAF/8QAJBAAAgICAQMFAQEAAAAAAAAAAAECEQMhEgQxQRMiUWGBM3H/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/AJDjg8UOcq+rAtxYnPb0hkcEfdd6eiqEeMUtX8hKyKDJhcVadoWelOCcXpEOfH6eSvD2iBZxxpII7pv6/gkb0+5v/GSXc4/JrkkrJYxk+7lysc03FIjg+afgn6xeyD89jfR3pV92d1afpR+mSxIjQUziDhmC1NNfoCVukPUVGNIjIq8Ac1VWYrcEpd2hHF29uwKtPWhWd8pKD7VsLCqirEuXLJJv5GKJ5wcJU/xglk4epCvPgkcWnTQizDcSGfIGLsGvINQUJOTT1rQxRbldJozp4r3X8jJ21p0yZao0vsja4ZHEsvRLnTc7olBpgSim7aNTOasWqDGGkBBVJoNukAhmPTDlfFicc7aHWQcjJK0YpJRWxWbNrjH9ZJiabMbpsXB0mMTvYnX/2Q==" alt="SFX — Bandaged Horror" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">SFX — Bandaged Horror</span></div>
-    </div>
-    <div class="gallery-item" data-cat="bodypaint" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAgADAQT/xAAnEAACAgIBAwQBBQAAAAAAAAABAgARAyESIjFBUWFxgbETJDKRof/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAERIf/aAAwDAQACEQMRAD8A1B6ROlqA94QemR2uu47SDpbficvqIhUg0f8APSPHxJK+YXCESzO+JIMSmVDlISgecdjOgzngxYwraPf0ktUWQkXoTil8c0fGQbBsekuPMa17RKA2QNe6ESEfcw4EZApFeZrdZPYCVNbLKS9pQMVF/EiLNmqqJIOQVwfz4iKeMlgaPUpogm5BlP8AIcT7zPCf3DEaE3bhfVW/WMTQbGFtl7/mLGKvlsnuCzYk2uz6AyXNeiKPiOmmvciUlA8SgZjRgfQuh3mpWZMCQdHtIqxadmJ0J3MS60PJgXkcnSR9xurheqIoHxFRl+ifBv6iXE4NAmdAYqVPI6vQrU0xliac0PAPcy7SyNMd8RfeUYFSgZhoMj6IhVrk10akWFhUC2PxGzCwGFqTX3CmlAk45KRde8qCS+NuZYEk1XtAQHQ2CcrN/U6qHlyduRHaacoGwYSmIaUg/9k=" alt="Body Paint — Buddha" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Body Paint — Buddha</span></div>
-    </div>
-    <div class="gallery-item" data-cat="facepaint" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADwDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAQIDBAD/xAAnEAEAAgEEAgECBwAAAAAAAAABAAIRAxIhMSJRQRMyI2FxgaGxwf/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAYEQEBAAMAAAAAAAAAAAAAAAAAAREhcf/aAAwDAQACEQMRAD8AYrOXE4fGKsOw7p3cJVxBhIQts4/2JXTrtR5ljnuSv+Hbj7WRE2hXuDFPbKahup+kkU/OGK1dVJxzYiUuX0z3DW5XK9w3KtEshBp6peyYg1q5sL9vzBwK6ha+3iHUMiMWunhEcBDfDxCbTs+DiSLcdxx8ttoiYYZoUs1Zc23Me5L6VsD8S2lTBlOYWK0pt7c/tGTMTdt769wupUM5JW0d214eIM7rYi2d1+OmU0wbh6gyVrzC6Lfyq8Ma+NucfMmXa8DI51qpXwBitdrHOJzyQ2SZ9Suy24PH+paziS1bm3HuUPuptznmLp5C1vclQ5My7u1LAHBIWi5+lz8skYTmW1fHTBeYldManMMtDELOUSPmCwQ2jqL8TOiPM0ajgmey5zCVTTHG74lBQcdkhVXAM0Bs07Nnl6ISp5b825ZWgtR6iV8U/mTdSw4q4IR//9k=" alt="Face Paint — Cheshire Cat" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Face Paint — Cheshire Cat</span></div>
-    </div>
-    <div class="gallery-item" data-cat="sfx" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADkDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAQIDBAAF/8QAKRAAAgICAQIFBAMBAAAAAAAAAQIAERMhEjFBBCIyUXETUpGhQmFiwf/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAwDAQACEQMRAD8AxjrGVSG3GVLBIhxeZ+LCBgMdRKmh/D+W1meq6yUCEGoYACSAOpkTioYFUi71q4YBRFIQGMo3Y9UGJg+MC9gVKhV40NXEgVPpD766mbICGIPW5ZcR5E3XtIXyVmbZB6yVKIQCzADqTKJiFAnZP6lQiDzAKKHUSBciqmOyLJMjz/yPzOyZDyIBPGJJY04BWL53DkPkjAEdorX0qx7SKYzFBo79jJA3163NGPHb+YGv7jZMIItVFiQBSQCQITdWBr5kxlA1/wAjE971JM77cxYzeoxbiHoKNGAiKuVeN3ozjmx/d+plpVQpG9wkUdSC5k59TRi5cpfyoddz7yUIoZizKoO4wUnbbMpjrGOPfvH+BEMuRAFB795KaPEMBfuRM24htOBeoWKMa+w/EH1Bd8owzL/Ij5gTjCn2gyTZFx3SgQt4hQDxsntIJ5n3uSLzbkWvcP1GAq4h9RnXECST1izp0k//2Q==" alt="SFX — Horror Clowns" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">SFX — Horror Clowns</span></div>
-    </div>
-    <div class="gallery-item" data-cat="bodypaint" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAA1AFADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAIDAQQF/8QAJhAAAgIBBAEEAgMAAAAAAAAAAQIAEREDEjFBUSIyYXEEoVJywf/EABgBAQEBAQEAAAAAAAAAAAAAAAIBAAME/8QAHREAAgMBAAMBAAAAAAAAAAAAAAECESExAxJBUf/aAAwDAQACEQMRAD8ApqqHUg1jOZxOtGp1qb3eanNrcy1gL2hUXc4BOO56a7QoC8dTzAcZ58iU09Vla1Oex5koZ6My/mS0tYayGxTdiaxZO8TEKXQEU8wQ7gDgwJzOfk4JHLxpv/aJjmUY0n2bkiZ6YcOTLaR931ObX98tonBHdSOtlxAVdFXiMFYNdTUAqrMqNO+WJHzJQmzfxfSWbzxLvbUBIMu0Wty+lqBkvvuRtdMtwcDYu0SWq21aHJwIzOFFtIFrJYmiRgeJyVylbK8VCk/oVELCOyCgS1f7E9Nnkz0xlmAo1CQd3AP7g6hxuHIiO9rUxNQjmFP9K19RqmjRltNuREZQ4scxFba1GVrKI9LPeKOIukxRjeAREOpFLE11XEPqqpmjaLO242DM3hRgWZNbqabvqVQw30ZnH8bMALyK+pItRqbvmstE4QhCIZWKnEqfUDfiEI4hkR7hdwhChDAm+YFoQisgpNzIQgKf/9k=" alt="Body Paint — Earth Maternity" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">Body Paint — Earth Maternity</span></div>
-    </div>
-    <div class="gallery-item" data-cat="sfx" onclick="openLightbox(this)">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCABQADwDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAwIEAQD/xAAoEAEAAgICAAUCBwAAAAAAAAABAAIRIQMxBBJBUXEiIxNCYYGRobH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/ADK4J538Skz3oh9sC7t0SjifeXSv8xg1I4zFWruI1lJm+JQentIWAtWQ1mm1YbXcQ5zaYdd2CN4g0YIfCbYFdXF0ilqnrM97JfqdM2FyGP7kTZ+sZ2thvDorVA6J3jMJreJKlSQkuckyjlQBfeHU8tmVy5OIHuR562qHrjcmoQsWruuZ5K1NVgLc9wicNly2c46g0SuDtMy9bx2ELI2zLFw4wfrEUdeSymf8mkDEApyWsedME0GMRYZfEWOpmM5yS922s9jUGpCn1V+ZdalauPWFx28vfU0VrV3IorWtWe5LGAPmXygcbgmf80oiVu16iFixmBmczEWIGezhkDO5kVkTi5PK4eoA4Z3Mk2cr9tmZdz34n22r+0hZJayS04sjMg//2Q==" alt="SFX — Wound FX" loading="lazy">
-      <div class="gallery-overlay"><span class="gallery-label">SFX — Wound FX</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section class="insta-section">
-  <h2 class="section-title">ON THE GRAM</h2>
-  <p class="section-subtitle">@angiespamakeup</p>
-  <div class="insta-grid">
+  <div class="work-grid">
     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DPb1_kgkio5/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DPb1_kgkio5/"></a></blockquote>
     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DPYBfyhDqiz/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DPYBfyhDqiz/"></a></blockquote>
     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CzB9u9pJFBi/" data-instgrm-version="14"><a href="https://www.instagram.com/p/CzB9u9pJFBi/"></a></blockquote>
     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBZhIUqTcdN/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DBZhIUqTcdN/"></a></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQnyYELkQa2/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQnyYELkQa2/"></a></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPgu4MqkahS/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DPgu4MqkahS/"></a></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-qQ4xqSM0H/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/C-qQ4xqSM0H/"></a></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cy7VoRGLApG/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Cy7VoRGLApG/"></a></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQm0qw0knXf/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQm0qw0knXf/"></a></blockquote>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <h2 class="section-title">ABOUT ANGIE</h2>
-  <p class="section-subtitle">The artist behind the airbrush</p>
+  <p class="section-subtitle">The one with the airbrush</p>
   <div class="about-wrap">
     <div class="about-text">
-      <p>Angie Putman is a <span class="highlight">Calgary-based airbrush and body paint artist</span> whose work blurs the line between human form and fine art. From hyper-realistic SFX prosthetics to full-body painted illusions, Angie transforms skin into something that stops people mid-scroll.</p>
-      <p>Her airbrush is her signature tool — and <span class="highlight">any surface is her canvas</span>. Bodies, faces, belly bumps, vehicles, walls, leather, canvas. If it exists, she can paint it. What sets Angie apart isn't just technical skill — it's the vision. Every piece tells a story, every surface becomes a world.</p>
-      <p>Whether she's turning someone into a UV-reactive baroque sculpture, painting jeans and a plaid shirt onto bare skin so real you can't tell the difference, or sculpting demon horns from prosthetics — Angie doesn't do ordinary.</p>
+      <p>Angie Putman is a <span class="highlight">Calgary-based airbrush and body paint artist</span>. From SFX prosthetics to full-body painted illusions — if it has a surface, she's probably painted it.</p>
+      <p>Her airbrush is her go-to, and <span class="highlight">any surface is fair game</span>. Bodies, faces, belly bumps, walls, leather, you name it. What makes Angie's work different is the vision — every piece tells a story.</p>
+      <p>Whether she's painting jeans onto bare skin so real you can't tell the difference, sculpting demon horns from prosthetics, or turning someone into a UV-reactive baroque sculpture — boring isn't really her thing.</p>
     </div>
     <div class="about-stats">
       <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years Painting</div></div>
@@ -287,32 +180,32 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
     <div class="service-card">
       <div class="service-icon">🎨</div>
       <h3>BODY PAINT</h3>
-      <p>Full-body fine art paintings that transform the human form into living sculptures. Competition-level work that belongs in galleries.</p>
+      <p>Full-body paintings that turn people into living art. Competition-level work that belongs in galleries. Yeah, she does that.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">💀</div>
       <h3>SFX & PROSTHETICS</h3>
-      <p>Hyper-realistic special effects makeup and custom prosthetics. Horror, film, haunted attractions — if it needs to look terrifyingly real, this is it.</p>
+      <p>Special effects makeup and custom prosthetics. Horror, film, haunted houses — if it needs to look terrifyingly real, she's your person.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">👁️</div>
       <h3>ILLUSION ART</h3>
-      <p>Trompe l'oeil body painting that tricks the eye. Painted-on clothing, accessories, and textures so convincing you won't believe it's paint.</p>
+      <p>Painted-on clothes, accessories, and textures so real you'll do a double-take. Yes, that's all paint.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">✨</div>
       <h3>UV & BLACKLIGHT</h3>
-      <p>Reactive body art that transforms under UV light. Perfect for events, performances, and editorial shoots that need to glow.</p>
+      <p>Body art that glows under blacklight. Events, performances, photo shoots — anything that needs to light up.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">🦋</div>
       <h3>FACE PAINT</h3>
-      <p>From whimsical characters to editorial beauty looks — detailed face painting for events, photoshoots, cosplay, and performance.</p>
+      <p>From fun characters to editorial beauty looks — face painting for events, photo shoots, cosplay, and whatever you've got planned.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">🤰</div>
       <h3>MATERNITY & BELLY ART</h3>
-      <p>Stunning belly paintings that celebrate pregnancy with art. Custom designs from serene to fantastical — a keepsake captured forever in photos.</p>
+      <p>Beautiful belly paintings that celebrate the bump. Custom designs from chill to wild — a keepsake you'll have forever in photos.</p>
     </div>
   </div>
 </section>
@@ -334,51 +227,15 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
 <footer>
   <div class="social">
     <a href="https://www.instagram.com/angiespamakeup/" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/angiespamakeup" target="_blank">Facebook</a>
+    <a href="https://www.imdb.com/name/nm11482958/" target="_blank">IMDB</a>
   </div>
   <div class="copy">&copy; 2025 ANGIE PUTMAN ARTISTRY · CALGARY, AB</div>
 </footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <div class="lightbox-close">&times;</div>
-  <img id="lightbox-img" src="" alt="">
-</div>
 
 <script>
 // Nav scroll effect
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
-
-// Gallery filter
-document.querySelectorAll('.gallery-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.gallery-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter=btn.dataset.filter;
-    document.querySelectorAll('.gallery-item').forEach(item=>{
-      if(filter==='all'||item.dataset.cat===filter){
-        item.style.display='';
-        item.style.animation='fadeIn .4s ease';
-      }else{
-        item.style.display='none';
-      }
-    });
-  });
-});
-
-// Lightbox
-function openLightbox(el){
-  const img=el.querySelector('img');
-  document.getElementById('lightbox-img').src=img.src;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeLightbox(){
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
 
 // Fade in animation
 const style=document.createElement('style');
@@ -389,7 +246,7 @@ document.head.appendChild(style);
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.style.animation='fadeIn .6s ease forwards';observer.unobserve(e.target)}});
 },{threshold:.1});
-document.querySelectorAll('.gallery-item,.service-card').forEach(el=>{
+document.querySelectorAll('.service-card').forEach(el=>{
   el.style.opacity='0';observer.observe(el);
 });
 </script>
