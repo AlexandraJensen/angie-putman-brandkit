@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANGIE PUTMAN ARTISTRY — Airbrush · Body Paint · Any Surface</title>
-<meta name="description" content="Angie Putman — Calgary airbrush and body paint artist. SFX, body paint, illusion art, UV paint, face paint. Over 15 years experience across six disciplines.">
+<title>ANGIE PUTMAN ARTISTRY â Airbrush Â· Body Paint Â· Any Surface</title>
+<meta name="description" content="Angie Putman â Calgary airbrush and body paint artist. SFX, body paint, illusion art, UV paint, face paint. Over 15 years experience across six disciplines.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -49,10 +49,52 @@ section{padding:5rem 2rem}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4rem);text-align:center;letter-spacing:.1em;margin-bottom:.3em}
 .section-subtitle{text-align:center;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;opacity:.5;margin-bottom:3rem}
 
-/* INSTAGRAM GRID (THE WORK) */
-.work-section{background:rgba(248,244,240,.02);padding:5rem 2rem}
-.work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;max-width:1300px;margin:0 auto}
-.work-grid blockquote{max-width:100% !important;min-width:0 !important;margin:0 !important;width:100% !important}
+/* BEST OF â HERO HOOK */
+.bestof{background:rgba(248,244,240,.02);padding:5rem 2rem;position:relative;overflow:hidden}
+.bestof::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--magenta),var(--teal),transparent)}
+.bestof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;max-width:1300px;margin:0 auto}
+.bestof-grid blockquote{max-width:100% !important;min-width:0 !important;margin:0 !important;width:100% !important}
+
+/* FEED TABS */
+.feed-section{padding:5rem 2rem}
+.feed-tabs{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:3rem}
+.feed-tab{padding:.6rem 1.5rem;border:1px solid rgba(248,244,240,.12);border-radius:2rem;font-family:'Montserrat',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .3s;background:transparent;color:var(--white);opacity:.5}
+.feed-tab:hover{opacity:.8;border-color:rgba(248,244,240,.3)}
+.feed-tab.active{opacity:1;border-color:var(--teal);color:var(--teal);background:rgba(24,216,200,.08)}
+.feed-panel{display:none;max-width:1300px;margin:0 auto}
+.feed-panel.active{display:block}
+
+/* INSTAGRAM GRID */
+.ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+.ig-grid blockquote{max-width:100% !important;min-width:0 !important;margin:0 !important;width:100% !important}
+
+/* FACEBOOK SECTION */
+.fb-wrap{max-width:900px;margin:0 auto}
+.fb-intro{text-align:center;margin-bottom:2rem;opacity:.7;line-height:1.8;font-size:.95rem}
+.fb-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:2rem;margin-bottom:2rem}
+.fb-card{border:1px solid rgba(248,244,240,.08);border-radius:12px;padding:2rem;transition:all .4s;position:relative;overflow:hidden}
+.fb-card:hover{border-color:var(--teal);background:rgba(24,216,200,.03)}
+.fb-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--hot),var(--magenta),var(--violet),var(--teal));opacity:0;transition:opacity .4s}
+.fb-card:hover::before{opacity:1}
+.fb-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.08em;margin-bottom:.5rem;color:var(--teal)}
+.fb-card .fb-handle{font-size:.75rem;opacity:.4;letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase}
+.fb-card p{font-size:.85rem;line-height:1.7;opacity:.6;margin-bottom:1.2rem}
+.fb-card .btn-sm{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.2rem;border-radius:2rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:1px solid var(--teal);color:var(--teal);transition:all .3s}
+.fb-card .btn-sm:hover{background:rgba(24,216,200,.1)}
+
+/* IMDB SECTION */
+.imdb-wrap{max-width:700px;margin:0 auto;text-align:center}
+.imdb-credit{border:1px solid rgba(248,244,240,.08);border-radius:12px;padding:2.5rem;position:relative;overflow:hidden}
+.imdb-credit::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--hot))}
+.imdb-credit h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.05em;margin-bottom:.3rem}
+.imdb-credit .imdb-year{font-size:.85rem;color:var(--gold);font-weight:600;margin-bottom:.8rem}
+.imdb-credit .imdb-role{font-size:.85rem;opacity:.5;margin-bottom:1.5rem}
+.imdb-credit .btn-sm{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.2rem;border-radius:2rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:1px solid var(--gold);color:var(--gold);transition:all .3s}
+.imdb-credit .btn-sm:hover{background:rgba(232,184,40,.1)}
+
+/* TIKTOK PLACEHOLDER */
+.tiktok-placeholder{max-width:600px;margin:0 auto;text-align:center;padding:4rem 2rem;border:1px dashed rgba(248,244,240,.12);border-radius:12px}
+.tiktok-placeholder p{opacity:.4;font-size:.9rem;line-height:1.8}
 
 /* ABOUT */
 .about-wrap{max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:3rem;text-align:center}
@@ -99,11 +141,16 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
   .about-stats{gap:1.5rem}
   section{padding:3rem 1.2rem}
   .services-grid{grid-template-columns:1fr}
-  .work-grid{grid-template-columns:1fr 1fr}
+  .ig-grid{grid-template-columns:1fr 1fr}
+  .bestof-grid{grid-template-columns:1fr 1fr}
+  .fb-cards{grid-template-columns:1fr}
+  .feed-tabs{gap:.3rem}
+  .feed-tab{padding:.5rem 1rem;font-size:.65rem}
 }
 @media(max-width:480px){
   .nav-links{display:none}
-  .work-grid{grid-template-columns:1fr}
+  .ig-grid{grid-template-columns:1fr}
+  .bestof-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -113,7 +160,8 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
 <nav id="nav">
   <div class="nav-logo">ANGIE PUTMAN</div>
   <ul class="nav-links">
-    <li><a href="#work">The Work</a></li>
+    <li><a href="#bestof">Best Of</a></li>
+    <li><a href="#feed">The Feed</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Book Angie</a></li>
@@ -132,25 +180,90 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
     <h1>ANGIE</h1>
     <div class="hero-sub">PUTMAN ARTISTRY</div>
     <div class="hero-tagline">Look what I can do...</div>
-    <div class="hero-disciplines">AIRBRUSH · BODY PAINT · ANY SURFACE</div>
+    <div class="hero-disciplines">AIRBRUSH &middot; BODY PAINT &middot; ANY SURFACE</div>
   </div>
   <div class="hero-scroll"><span></span>&#8595;</div>
 </section>
 
-<!-- THE WORK (Instagram Embeds) -->
-<section id="work" class="work-section">
-  <h2 class="section-title">THE WORK</h2>
-  <p class="section-subtitle">Every surface is a canvas</p>
-  <div class="work-grid">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DPb1_kgkio5/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DPb1_kgkio5/"></a></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DPYBfyhDqiz/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DPYBfyhDqiz/"></a></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CzB9u9pJFBi/" data-instgrm-version="14"><a href="https://www.instagram.com/p/CzB9u9pJFBi/"></a></blockquote>
+<!-- BEST OF â The Hook -->
+<section id="bestof" class="bestof">
+  <h2 class="section-title">BEST OF</h2>
+  <p class="section-subtitle">The highlights reel</p>
+  <div class="bestof-grid">
     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBZhIUqTcdN/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DBZhIUqTcdN/"></a></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CzB9u9pJFBi/" data-instgrm-version="14"><a href="https://www.instagram.com/p/CzB9u9pJFBi/"></a></blockquote>
     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQnyYELkQa2/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQnyYELkQa2/"></a></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPgu4MqkahS/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DPgu4MqkahS/"></a></blockquote>
     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-qQ4xqSM0H/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/C-qQ4xqSM0H/"></a></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cy7VoRGLApG/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Cy7VoRGLApG/"></a></blockquote>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQm0qw0knXf/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQm0qw0knXf/"></a></blockquote>
+  </div>
+</section>
+
+<!-- THE FEED â Combined Platform Hub -->
+<section id="feed" class="feed-section">
+  <h2 class="section-title">THE FEED</h2>
+  <p class="section-subtitle">Follow the work across platforms</p>
+
+  <div class="feed-tabs">
+    <button class="feed-tab active" data-tab="instagram">Instagram</button>
+    <button class="feed-tab" data-tab="facebook">Facebook</button>
+    <button class="feed-tab" data-tab="imdb">IMDB</button>
+    <button class="feed-tab" data-tab="tiktok">TikTok</button>
+  </div>
+
+  <!-- INSTAGRAM TAB -->
+  <div class="feed-panel active" id="panel-instagram">
+    <div class="ig-grid">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DPb1_kgkio5/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DPb1_kgkio5/"></a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DPYBfyhDqiz/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DPYBfyhDqiz/"></a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQm0qw0knXf/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQm0qw0knXf/"></a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQUmXhbgckG/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DQUmXhbgckG/"></a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPgu4MqkahS/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DPgu4MqkahS/"></a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cy-Wo6pOyWM/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Cy-Wo6pOyWM/"></a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cy7VoRGLApG/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Cy7VoRGLApG/"></a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBZhIUqTcdN/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DBZhIUqTcdN/"></a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-qQ4xqSM0H/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/C-qQ4xqSM0H/"></a></blockquote>
+    </div>
+  </div>
+
+  <!-- FACEBOOK TAB -->
+  <div class="feed-panel" id="panel-facebook">
+    <div class="fb-wrap">
+      <p class="fb-intro">Angie maintains two Facebook presences â her professional body paint business and her custom merchandise brand.</p>
+      <div class="fb-cards">
+        <div class="fb-card">
+          <h3>Calgary Face Painting and Body Artist</h3>
+          <div class="fb-handle">Professional Body Paint</div>
+          <p>Pro body painter for all occasions. Private sessions, photo shoots, festivals. Event work, Halloween and festival body paint, Screamfest appearances, and client showcases. Active community page with 152 followers.</p>
+          <a href="https://www.facebook.com/people/Calgary-Face-Painting-and-Body-Artist/100063449935902/" target="_blank" class="btn-sm">Visit on Facebook &rarr;</a>
+        </div>
+        <div class="fb-card">
+          <h3>Introvert Creative</h3>
+          <div class="fb-handle">Custom Merch &amp; Art Prints</div>
+          <p>Personalization products and artist-for-hire. Custom t-shirts, hoodies, masks, mugs, jewelry, and branded logos. Original airbrush illustrations including character art, cityscapes, and cosmic designs.</p>
+          <a href="https://www.facebook.com/people/Introvert-Creative/100077093672617/" target="_blank" class="btn-sm">Visit on Facebook &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMDB TAB -->
+  <div class="feed-panel" id="panel-imdb">
+    <div class="imdb-wrap">
+      <div class="imdb-credit">
+        <h3>A Miracle on Christmas Lake</h3>
+        <div class="imdb-year">2016</div>
+        <div class="imdb-role">Hair &amp; Makeup Department</div>
+        <p style="font-size:.85rem;opacity:.6;line-height:1.7;margin-bottom:1.5rem">Angie Putman is credited on IMDB for her work in the hair and makeup department on the film A Miracle on Christmas Lake. Her professional experience spans both film production and live event artistry.</p>
+        <a href="https://www.imdb.com/name/nm11482958/" target="_blank" class="btn-sm">View on IMDB &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIKTOK TAB (Placeholder) -->
+  <div class="feed-panel" id="panel-tiktok">
+    <div class="tiktok-placeholder">
+      <p style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.08em;margin-bottom:.8rem;opacity:.6">TIKTOK â COMING SOON</p>
+      <p>Angie does live body paint transformations on TikTok. This feed will be connected once the account link is confirmed.</p>
+    </div>
   </div>
 </section>
 
@@ -160,8 +273,8 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
   <p class="section-subtitle">The one with the airbrush</p>
   <div class="about-wrap">
     <div class="about-text">
-      <p>Angie Putman is a <span class="highlight">Calgary-based airbrush and body paint artist</span> specializing in SFX prosthetics, full-body painted illusions, and UV-reactive work. With over 15 years of experience, she works across six disciplines — bringing the same level of detail to a film set as she does to a live event.</p>
-      <p>Her primary tool is the airbrush, and her <span class="highlight">range of surfaces includes skin, prosthetics, leather, walls, and more</span>. Each project is approached with a focus on concept development and execution — whether it's a competition-level body paint, a photorealistic illusion, or a custom SFX build.</p>
+      <p>Angie Putman is a <span class="highlight">Calgary-based airbrush and body paint artist</span> specializing in SFX prosthetics, full-body painted illusions, and UV-reactive work. With over 15 years of experience, she works across six disciplines â bringing the same level of detail to a film set as she does to a live event.</p>
+      <p>Her primary tool is the airbrush, and her <span class="highlight">range of surfaces includes skin, prosthetics, leather, walls, and more</span>. Each project is approached with a focus on concept development and execution â whether it's a competition-level body paint, a photorealistic illusion, or a custom SFX build.</p>
       <p>Notable work includes painted-on clothing indistinguishable from the real thing, custom prosthetic sculptures, and UV-reactive body art designed for stage and photography. She is listed on IMDB for her work in the film and television make-up department.</p>
     </div>
     <div class="about-stats">
@@ -178,33 +291,33 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
   <p class="section-subtitle">Six disciplines, one artist</p>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">🎨</div>
+      <div class="service-icon">&#127912;</div>
       <h3>BODY PAINT</h3>
       <p>Full-body painting for competition, editorial, and event work. Concept-driven pieces designed for photography, gallery display, and live performance.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">💀</div>
-      <h3>SFX & PROSTHETICS</h3>
+      <div class="service-icon">&#128128;</div>
+      <h3>SFX &amp; PROSTHETICS</h3>
       <p>Special effects makeup and custom prosthetic fabrication. Applications include film, television, haunted attractions, and themed events requiring realistic character work.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">👁️</div>
+      <div class="service-icon">&#128065;&#65039;</div>
       <h3>ILLUSION ART</h3>
       <p>Painted-on clothing, accessories, and textures that replicate real objects on skin. Trompe-l'oeil technique applied to body art for photography and live demonstration.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">✨</div>
-      <h3>UV & BLACKLIGHT</h3>
+      <div class="service-icon">&#10024;</div>
+      <h3>UV &amp; BLACKLIGHT</h3>
       <p>Body art designed to fluoresce under UV lighting. Suited for stage performances, nightlife events, branded activations, and editorial photography.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">🦋</div>
+      <div class="service-icon">&#129419;</div>
       <h3>FACE PAINT</h3>
       <p>Character and editorial face painting for events, photo shoots, cosplay, and themed productions. Ranging from children's entertainment to high-detail artistic work.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">🤰</div>
-      <h3>MATERNITY & BELLY ART</h3>
+      <div class="service-icon">&#129328;</div>
+      <h3>MATERNITY &amp; BELLY ART</h3>
       <p>Custom belly painting for maternity photography sessions. Designs range from simple to elaborate, created as a keepsake captured in professional photos.</p>
     </div>
   </div>
@@ -216,7 +329,7 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
   <div class="tagline">Look what we can do...</div>
   <div class="cta-buttons">
     <a href="https://www.instagram.com/angiespamakeup/" target="_blank" class="btn btn-primary">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44z"/></svg>
       Follow @angiespamakeup
     </a>
     <a href="mailto:angie@putmanartistry.com" class="btn btn-outline">Get in Touch</a>
@@ -227,15 +340,28 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
 <footer>
   <div class="social">
     <a href="https://www.instagram.com/angiespamakeup/" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/people/Calgary-Face-Painting-and-Body-Artist/100063449935902/" target="_blank">Facebook</a>
     <a href="https://www.imdb.com/name/nm11482958/" target="_blank">IMDB</a>
   </div>
-  <div class="copy">&copy; 2025 ANGIE PUTMAN ARTISTRY · CALGARY, AB</div>
+  <div class="copy">&copy; 2025 ANGIE PUTMAN ARTISTRY &middot; CALGARY, AB</div>
 </footer>
 
 <script>
 // Nav scroll effect
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
+
+// Feed tab switching
+document.querySelectorAll('.feed-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.feed-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.feed-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+    // Re-process Instagram embeds when switching to IG tab
+    if(tab.dataset.tab==='instagram'&&window.instgrm){window.instgrm.Embeds.process()}
+  });
+});
 
 // Fade in animation
 const style=document.createElement('style');
@@ -246,7 +372,7 @@ document.head.appendChild(style);
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.style.animation='fadeIn .6s ease forwards';observer.unobserve(e.target)}});
 },{threshold:.1});
-document.querySelectorAll('.service-card').forEach(el=>{
+document.querySelectorAll('.service-card,.fb-card,.imdb-credit').forEach(el=>{
   el.style.opacity='0';observer.observe(el);
 });
 </script>
