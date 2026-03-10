@@ -1,0 +1,14 @@
+# Original source photos (large .heic files)
+Photos/
+
+# macOS junk
+.DS_Store
+._*
+
+# Conversion script (not needed in deploy)
+convert-photos.sh
+
+# Editor files
+*.swp
+*~
+.vscode/
