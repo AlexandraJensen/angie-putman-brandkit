@@ -4,186 +4,269 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ANGIE PUTMAN ARTISTRY &mdash; Airbrush &middot; Body Paint &middot; Any Surface</title>
-<meta name="description" content="Angie Putman &mdash; Calgary airbrush and body paint artist. SFX, body paint, illusion art, UV paint, face paint. Over 15 years experience across six disciplines.">
+<meta name="description" content="Angie Putman — Calgary airbrush and body paint artist. SFX, body paint, illusion art, UV paint, face paint, maternity art. Over 15 years across six disciplines.">
+<meta name="keywords" content="Calgary body paint, airbrush artist, SFX makeup, prosthetics, UV body paint, face painting Calgary, maternity belly art, illusion body art">
+
+<!-- Open Graph -->
+<meta property="og:title" content="ANGIE PUTMAN ARTISTRY">
+<meta property="og:description" content="Calgary airbrush and body paint artist. SFX, illusion art, UV paint, face paint. 15+ years across six disciplines.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://putmanartistry.com">
+<meta property="og:image" content="images/gallery/photo-17.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ANGIE PUTMAN ARTISTRY">
+<meta name="twitter:description" content="Calgary airbrush and body paint artist. Six disciplines, one artist.">
+
+<link rel="canonical" href="https://putmanartistry.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
 <style>
+/* ============================================================
+   ANGIE PUTMAN ARTISTRY — v5 Stylesheet
+   Brand: void/hot/magenta/violet/teal/gold/ice
+   ============================================================ */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
---void:#060609;--hot:#E8284A;--magenta:#D42878;--violet:#7028E8;
---teal:#18D8C8;--gold:#E8B828;--ice:#28B8E8;--white:#F8F4F0;
+  --void:#060609;--hot:#E8284A;--magenta:#D42878;--violet:#7028E8;
+  --teal:#18D8C8;--gold:#E8B828;--ice:#28B8E8;--white:#F8F4F0;
+  --glass:rgba(6,6,9,.85);--border:rgba(248,244,240,.08);
+  --grad:linear-gradient(135deg,var(--hot),var(--magenta),var(--violet));
 }
-html{scroll-behavior:smooth}
-body{background:var(--void);color:var(--white);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--void);color:var(--white);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6}
 a{color:var(--teal);text-decoration:none;transition:color .3s}
 a:hover{color:var(--ice)}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,rgba(6,6,9,.95),transparent);transition:background .3s}
-nav.scrolled{background:rgba(6,6,9,.97);backdrop-filter:blur(10px)}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.15em;background:linear-gradient(135deg,var(--hot),var(--magenta),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--white);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;font-weight:400;opacity:.7;transition:opacity .3s}
-.nav-links a:hover{opacity:1;color:var(--teal)}
+/* Skip to content */
+.skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--void);padding:.6rem 1.5rem;border-radius:0 0 8px 8px;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;z-index:9999;transition:top .3s}
+.skip-link:focus{top:0;color:var(--void)}
 
-/* HERO */
+/* ---- NAV ---- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:transparent;transition:all .4s}
+.nav.scrolled{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--border)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.15em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{color:var(--white);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-weight:400;opacity:.6;transition:all .3s;position:relative}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--teal)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--teal);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{padding:.5rem 1.2rem;border:1px solid var(--teal);border-radius:2rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--teal)!important;opacity:1!important;transition:all .3s!important}
+.nav-cta:hover{background:rgba(24,216,200,.1);transform:translateY(-1px)}
+.nav-cta::after{display:none!important}
+
+/* Mobile menu toggle */
+.nav-toggle{display:none;flex-direction:column;gap:5px;padding:.5rem;cursor:pointer;z-index:1001}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;border-radius:2px}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---- HERO ---- */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;padding:2rem}
 .hero-bg{position:absolute;inset:0;z-index:0}
-.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;animation:float 12s ease-in-out infinite}
-.blob-1{width:500px;height:500px;background:var(--magenta);top:-10%;left:-10%;animation-delay:0s}
-.blob-2{width:400px;height:400px;background:var(--teal);bottom:-5%;right:-5%;animation-delay:-4s}
-.blob-3{width:350px;height:350px;background:var(--violet);top:40%;right:20%;animation-delay:-8s;opacity:.3}
-.blob-4{width:300px;height:300px;background:var(--hot);bottom:20%;left:15%;animation-delay:-6s;opacity:.3}
-@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(.95)}}
+.blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:.4;will-change:transform}
+.blob-1{width:600px;height:600px;background:var(--magenta);top:-15%;left:-15%;animation:blobFloat 18s ease-in-out infinite}
+.blob-2{width:450px;height:450px;background:var(--teal);bottom:-10%;right:-10%;animation:blobFloat 22s ease-in-out infinite reverse}
+.blob-3{width:400px;height:400px;background:var(--violet);top:35%;right:15%;animation:blobFloat 20s ease-in-out infinite 4s;opacity:.25}
+.blob-4{width:350px;height:350px;background:var(--hot);bottom:25%;left:10%;animation:blobFloat 16s ease-in-out infinite 8s;opacity:.2}
+@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(40px,-30px) scale(1.08)}50%{transform:translate(-20px,40px) scale(.95)}75%{transform:translate(30px,20px) scale(1.03)}}
 .hero-content{position:relative;z-index:1}
-.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,15vw,12rem);line-height:.85;letter-spacing:.05em;background:linear-gradient(180deg,var(--hot),var(--magenta),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.2em}
-.hero-sub{font-family:'Bebas Neue',sans-serif;font-size:clamp(1rem,3vw,1.8rem);letter-spacing:.4em;color:var(--teal);margin-bottom:1.5em}
-.hero-tagline{font-family:'Caveat',cursive;font-size:clamp(1.5rem,4vw,2.5rem);color:var(--gold);margin-bottom:1em}
-.hero-disciplines{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6}
-.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:1;opacity:.4;animation:bounce 2s infinite}
-.hero-scroll span{display:block;width:2px;height:40px;background:var(--white);margin:0 auto .5rem}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,16vw,13rem);line-height:.82;letter-spacing:.05em;background:linear-gradient(180deg,var(--hot),var(--magenta),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.15em;animation:heroIn .8s ease-out both}
+.hero-sub{font-family:'Bebas Neue',sans-serif;font-size:clamp(1rem,3vw,1.8rem);letter-spacing:.45em;color:var(--teal);margin-bottom:1.5em;animation:heroIn .8s ease-out .15s both}
+.hero-tagline{font-family:'Caveat',cursive;font-size:clamp(1.5rem,4vw,2.6rem);color:var(--gold);margin-bottom:1em;animation:heroIn .8s ease-out .3s both}
+.hero-disciplines{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;opacity:.5;animation:heroIn .8s ease-out .45s both}
+@keyframes heroIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:1;opacity:.3;animation:scrollBounce 2.5s ease-in-out infinite}
+.hero-scroll span{display:block;width:2px;height:40px;background:var(--white);margin:0 auto .5rem;border-radius:2px}
+@keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0);opacity:.3}50%{transform:translateX(-50%) translateY(10px);opacity:.6}}
 
-/* SECTIONS */
-section{padding:5rem 2rem}
+/* ---- SHARED SECTION STYLES ---- */
+section{padding:6rem 2rem;position:relative}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4rem);text-align:center;letter-spacing:.1em;margin-bottom:.3em}
-.section-subtitle{text-align:center;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;opacity:.5;margin-bottom:3rem}
+.section-subtitle{text-align:center;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-bottom:3rem}
+.section-line{display:block;width:60px;height:2px;background:var(--grad);margin:0 auto 3rem;border-radius:2px}
 
-/* GALLERY GRID &mdash; Clean images, no IG wrappers */
-.gallery{background:rgba(248,244,240,.02);padding:5rem 2rem;position:relative;overflow:hidden}
-.gallery::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--magenta),var(--teal),transparent)}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:4px;max-width:1300px;margin:0 auto}
-.gallery-item{position:relative;overflow:hidden;aspect-ratio:1;background:#111}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s}
-.gallery-item:hover img{transform:scale(1.05);filter:brightness(1.1)}
-.gallery-item .gallery-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,6,9,.7) 0%,transparent 50%);opacity:0;transition:opacity .4s;display:flex;align-items:flex-end;padding:1rem}
-.gallery-item:hover .gallery-overlay{opacity:1}
-.gallery-overlay span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
-.gallery-reel::after{content:'\25B6';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;opacity:.7;pointer-events:none;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+/* ---- FEED MOSAIC ITEMS (Instagram grid) ---- */
+.mosaic-item{position:relative;overflow:hidden;aspect-ratio:1;background:#0a0a0f;cursor:pointer}
+.mosaic-item img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.23,1,.32,1),filter .4s}
+.mosaic-item:hover img{transform:scale(1.06);filter:brightness(1.15)}
+.mosaic-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,6,9,.8) 0%,rgba(6,6,9,.1) 40%,transparent 100%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem}
+.mosaic-item:hover .mosaic-overlay{opacity:1}
+.mosaic-overlay .mo-cat{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:.3rem}
+.mosaic-overlay .mo-title{font-size:.8rem;font-weight:400;opacity:.9}
 
-/* FEED TABS */
-.feed-section{padding:5rem 2rem}
+/* ---- FEED TABS ---- */
+.feed-section{overflow:hidden}
+.feed-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--violet),var(--hot),transparent)}
 .feed-tabs{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:3rem}
-.feed-tab{padding:.6rem 1.5rem;border:1px solid rgba(248,244,240,.12);border-radius:2rem;font-family:'Montserrat',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .3s;background:transparent;color:var(--white);opacity:.5}
-.feed-tab:hover{opacity:.8;border-color:rgba(248,244,240,.3)}
+.feed-tab{padding:.6rem 1.5rem;border:1px solid var(--border);border-radius:2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:all .3s;opacity:.5}
+.feed-tab:hover{opacity:.8;border-color:rgba(248,244,240,.25)}
 .feed-tab.active{opacity:1;border-color:var(--teal);color:var(--teal);background:rgba(24,216,200,.08)}
-.feed-panel{display:none;max-width:1300px;margin:0 auto}
+.feed-panel{display:none;max-width:1300px;margin:0 auto;animation:panelIn .4s ease-out}
 .feed-panel.active{display:block}
+@keyframes panelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-/* FEED GALLERY &mdash; Same clean grid for feed images */
-.feed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:4px}
-.feed-grid .gallery-item{aspect-ratio:1}
+/* Feed — Instagram grid */
+.feed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:4px}
+.feed-grid .mosaic-item{aspect-ratio:1;animation:none;opacity:1}
 
-/* FACEBOOK SECTION */
+/* Facebook cards */
 .fb-wrap{max-width:900px;margin:0 auto}
-.fb-intro{text-align:center;margin-bottom:2rem;opacity:.7;line-height:1.8;font-size:.95rem}
+.fb-intro{text-align:center;margin-bottom:2rem;opacity:.6;line-height:1.8;font-size:.95rem}
 .fb-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:2rem;margin-bottom:2rem}
-.fb-card{border:1px solid rgba(248,244,240,.08);border-radius:12px;padding:2rem;transition:all .4s;position:relative;overflow:hidden}
+.fb-card{border:1px solid var(--border);border-radius:12px;padding:2rem;transition:all .4s;position:relative;overflow:hidden}
 .fb-card:hover{border-color:var(--teal);background:rgba(24,216,200,.03)}
-.fb-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--hot),var(--magenta),var(--violet),var(--teal));opacity:0;transition:opacity .4s}
+.fb-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);opacity:0;transition:opacity .4s}
 .fb-card:hover::before{opacity:1}
 .fb-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.08em;margin-bottom:.5rem;color:var(--teal)}
-.fb-card .fb-handle{font-size:.75rem;opacity:.4;letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase}
-.fb-card p{font-size:.85rem;line-height:1.7;opacity:.6;margin-bottom:1.2rem}
-.fb-card .btn-sm{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.2rem;border-radius:2rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:1px solid var(--teal);color:var(--teal);transition:all .3s}
-.fb-card .btn-sm:hover{background:rgba(24,216,200,.1)}
+.fb-card .fb-handle{font-size:.72rem;opacity:.35;letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase}
+.fb-card p{font-size:.85rem;line-height:1.7;opacity:.55;margin-bottom:1.2rem}
+.btn-sm{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.2rem;border-radius:2rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:1px solid var(--teal);color:var(--teal);transition:all .3s}
+.btn-sm:hover{background:rgba(24,216,200,.1);color:var(--teal)}
 
-/* IMDB SECTION */
+/* IMDB */
 .imdb-wrap{max-width:700px;margin:0 auto;text-align:center}
-.imdb-credit{border:1px solid rgba(248,244,240,.08);border-radius:12px;padding:2.5rem;position:relative;overflow:hidden}
+.imdb-credit{border:1px solid var(--border);border-radius:12px;padding:2.5rem;position:relative;overflow:hidden}
 .imdb-credit::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--hot))}
 .imdb-credit h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.05em;margin-bottom:.3rem}
 .imdb-credit .imdb-year{font-size:.85rem;color:var(--gold);font-weight:600;margin-bottom:.8rem}
-.imdb-credit .imdb-role{font-size:.85rem;opacity:.5;margin-bottom:1.5rem}
-.imdb-credit .btn-sm{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.2rem;border-radius:2rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:1px solid var(--gold);color:var(--gold);transition:all .3s}
-.imdb-credit .btn-sm:hover{background:rgba(232,184,40,.1)}
+.imdb-credit .imdb-role{font-size:.85rem;opacity:.45;margin-bottom:1rem}
+.imdb-credit p{font-size:.85rem;opacity:.55;line-height:1.7;margin-bottom:1.5rem}
+.btn-gold{border-color:var(--gold);color:var(--gold)}
+.btn-gold:hover{background:rgba(232,184,40,.1);color:var(--gold)}
 
-/* TIKTOK SECTION */
+/* TikTok */
 .tiktok-wrap{max-width:700px;margin:0 auto;text-align:center}
-.tiktok-card{border:1px solid rgba(248,244,240,.08);border-radius:12px;padding:2.5rem;position:relative;overflow:hidden}
+.tiktok-card{border:1px solid var(--border);border-radius:12px;padding:2.5rem;position:relative;overflow:hidden}
 .tiktok-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#25F4EE,#FE2C55,#000)}
 .tiktok-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.05em;margin-bottom:.3rem}
 .tiktok-card .tk-handle{font-size:.85rem;color:#25F4EE;font-weight:600;margin-bottom:.8rem}
-.tiktok-card .tk-stats{font-size:.8rem;opacity:.4;letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase}
-.tiktok-card p{font-size:.85rem;opacity:.6;line-height:1.7;margin-bottom:1.5rem}
-.tiktok-card .btn-sm{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.2rem;border-radius:2rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:1px solid #25F4EE;color:#25F4EE;transition:all .3s}
-.tiktok-card .btn-sm:hover{background:rgba(37,244,238,.1)}
+.tiktok-card .tk-stats{font-size:.78rem;opacity:.35;letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase}
+.tiktok-card p{font-size:.85rem;opacity:.55;line-height:1.7;margin-bottom:1.5rem}
+.btn-tk{border-color:#25F4EE;color:#25F4EE}
+.btn-tk:hover{background:rgba(37,244,238,.1);color:#25F4EE}
 
-/* ABOUT */
-.about-wrap{max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:3rem;text-align:center}
-.about-text p{line-height:1.9;font-size:1rem;margin-bottom:1.5rem;opacity:.85}
-.about-text .highlight{color:var(--teal);font-weight:400}
-.about-stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+/* ---- ABOUT ---- */
+.about-wrap{max-width:800px;margin:0 auto;text-align:center}
+.about-text p{line-height:1.9;font-size:1rem;margin-bottom:1.5rem;opacity:.8}
+.about-text .hl{color:var(--teal);font-weight:400}
+.about-stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2.5rem}
 .stat{text-align:center}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;background:linear-gradient(135deg,var(--hot),var(--magenta));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;opacity:.5}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;opacity:.4;margin-top:.2rem}
 
-/* SERVICES */
+/* ---- SERVICES (with background photos) ---- */
 .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
-.service-card{border:1px solid rgba(248,244,240,.08);border-radius:12px;padding:2rem;transition:all .4s;position:relative;overflow:hidden}
-.service-card:hover{border-color:var(--teal);transform:translateY(-4px);background:rgba(24,216,200,.03)}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--hot),var(--magenta),var(--violet),var(--teal));opacity:0;transition:opacity .4s}
+.service-card{border:1px solid var(--border);border-radius:12px;padding:0;transition:all .4s;position:relative;overflow:hidden;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end}
+.service-card:hover{border-color:var(--teal);transform:translateY(-4px)}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);opacity:0;transition:opacity .4s;z-index:3}
 .service-card:hover::before{opacity:1}
+.service-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s cubic-bezier(.23,1,.32,1),filter .4s;z-index:0}
+.service-card:hover .service-card-bg{transform:scale(1.06);filter:brightness(1.1)}
+.service-card-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,6,9,.92) 0%,rgba(6,6,9,.6) 40%,rgba(6,6,9,.25) 100%);z-index:1;transition:background .4s}
+.service-card:hover .service-card-overlay{background:linear-gradient(0deg,rgba(6,6,9,.88) 0%,rgba(6,6,9,.45) 40%,rgba(6,6,9,.15) 100%)}
+.service-card-content{position:relative;z-index:2;padding:2rem}
 .service-icon{font-size:2rem;margin-bottom:1rem}
 .service-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.1em;margin-bottom:.8rem}
-.service-card p{font-size:.85rem;line-height:1.7;opacity:.6}
+.service-card p{font-size:.85rem;line-height:1.7;opacity:.65}
 
-/* CONTACT / CTA */
-.cta{text-align:center;padding:6rem 2rem;position:relative;overflow:hidden}
-.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,40,120,.1),transparent 70%)}
-.cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5rem);letter-spacing:.05em;margin-bottom:.3em;position:relative}
-.cta .tagline{font-family:'Caveat',cursive;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--gold);margin-bottom:2rem;position:relative}
-.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 2rem;border-radius:2rem;font-family:'Montserrat',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:all .3s}
-.btn-primary{background:linear-gradient(135deg,var(--hot),var(--magenta));color:var(--white)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(232,40,74,.3);color:var(--white)}
-.btn-outline{border:1px solid var(--teal);color:var(--teal)}
-.btn-outline:hover{background:rgba(24,216,200,.1);transform:translateY(-2px)}
+/* ---- CONTACT / CTA ---- */
+.cta-section{text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,40,120,.08),transparent 70%)}
+.cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5rem);letter-spacing:.05em;margin-bottom:.3em;position:relative}
+.cta-section .tagline{font-family:'Caveat',cursive;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--gold);margin-bottom:2rem;position:relative}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;margin-bottom:3rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 2rem;border-radius:2rem;font-family:'Montserrat',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:all .3s;border:none}
+.btn-primary{background:var(--grad);color:var(--white)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,40,74,.3);color:var(--white)}
+.btn-outline{border:1px solid var(--teal);color:var(--teal);background:transparent}
+.btn-outline:hover{background:rgba(24,216,200,.1);transform:translateY(-2px);color:var(--teal)}
 
-/* FOOTER */
-footer{text-align:center;padding:3rem 2rem;border-top:1px solid rgba(248,244,240,.06)}
-footer .social{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem}
-footer .social a{opacity:.4;transition:opacity .3s;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
-footer .social a:hover{opacity:1}
-footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
+/* Contact form */
+.contact-form{max-width:500px;margin:0 auto;position:relative}
+.contact-form h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.08em;margin-bottom:1.5rem;text-align:center}
+.form-group{margin-bottom:1.2rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:.8rem 1rem;background:rgba(248,244,240,.04);border:1px solid var(--border);border-radius:8px;color:var(--white);font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:300;transition:border-color .3s;outline:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--teal)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-group select option{background:var(--void);color:var(--white)}
+.form-group input::placeholder,.form-group textarea::placeholder{opacity:.3}
+.form-submit{width:100%;padding:.8rem;background:var(--grad);color:var(--white);border:none;border-radius:2rem;font-family:'Montserrat',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .3s}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,40,74,.3)}
+.form-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.form-status{text-align:center;margin-top:1.5rem;font-size:.85rem;opacity:0;transition:opacity .4s;min-height:1.5em}
+.form-status.visible{opacity:1}
+.form-status.success{color:var(--teal)}
+.form-status.error{color:var(--hot)}
 
-/* RESPONSIVE */
+/* ---- FOOTER ---- */
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--border)}
+footer .social{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}
+footer .social a{opacity:.35;transition:all .3s;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+footer .social a:hover{opacity:1;color:var(--teal)}
+footer .copy{font-size:.68rem;opacity:.2;letter-spacing:.1em}
+
+/* ---- SCROLL ANIMATIONS ---- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease-out,transform .6s ease-out}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ---- RESPONSIVE ---- */
 @media(max-width:768px){
-  .nav-links{gap:1rem}
-  .nav-links a{font-size:.65rem}
+  .nav-links{position:fixed;top:0;right:-100%;width:70vw;max-width:300px;height:100vh;background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:right .4s cubic-bezier(.23,1,.32,1);padding:2rem;box-shadow:-4px 0 20px rgba(0,0,0,.3)}
+  .nav-links.open{right:0}
+  .nav-links a{font-size:.9rem;opacity:.7}
+  .nav-toggle{display:flex}
   .about-stats{gap:1.5rem}
-  section{padding:3rem 1.2rem}
+  section{padding:4rem 1.2rem}
   .services-grid{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:repeat(3,1fr)}
   .feed-grid{grid-template-columns:repeat(3,1fr)}
   .fb-cards{grid-template-columns:1fr}
+  .service-card{min-height:260px}
   .feed-tabs{gap:.3rem}
-  .feed-tab{padding:.5rem 1rem;font-size:.65rem}
+  .feed-tab{padding:.4rem .8rem;font-size:.62rem}
+  .hero h1{font-size:clamp(4rem,18vw,8rem)}
 }
 @media(max-width:480px){
-  .nav-links{display:none}
-  .gallery-grid{grid-template-columns:repeat(2,1fr)}
   .feed-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-buttons{flex-direction:column;align-items:center}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-logo">ANGIE PUTMAN</div>
-  <ul class="nav-links">
-    <li><a href="#bestof">Best Of</a></li>
+<!-- Skip to content (accessibility) -->
+<a href="#feed" class="skip-link">Skip to content</a>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-logo">ANGIE PUTMAN</a>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#feed">The Feed</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Book Angie</a></li>
+    <li><a href="#contact" class="nav-cta">Book Angie</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg">
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
@@ -195,146 +278,132 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
     <div class="hero-tagline">Look what I can do...</div>
     <div class="hero-disciplines">AIRBRUSH &middot; BODY PAINT &middot; ANY SURFACE</div>
   </div>
-  <div class="hero-scroll"><span></span>&#8595;</div>
+  <div class="hero-scroll" aria-hidden="true"><span></span>&#8595;</div>
 </section>
 
-<!-- BEST OF &mdash; Clean Gallery Grid -->
-<section id="bestof" class="gallery">
-  <h2 class="section-title">BEST OF</h2>
-  <p class="section-subtitle">The highlights reel</p>
-  <div class="gallery-grid">
-    <a href="https://www.instagram.com/p/DBZhIUqTcdN/" target="_blank" class="gallery-item">
-      <img src="https://www.instagram.com/p/DBZhIUqTcdN/media/?size=l" alt="SFX prosthetic creature work" loading="lazy">
-      <div class="gallery-overlay"><span>View on Instagram</span></div>
-    </a>
-    <a href="https://www.instagram.com/p/CzB9u9pJFBi/" target="_blank" class="gallery-item">
-      <img src="https://www.instagram.com/p/CzB9u9pJFBi/media/?size=l" alt="Body paint duo &mdash; colorful sugar skull and body art" loading="lazy">
-      <div class="gallery-overlay"><span>View on Instagram</span></div>
-    </a>
-    <a href="https://www.instagram.com/reel/DQnyYELkQa2/" target="_blank" class="gallery-item gallery-reel">
-      <img src="https://www.instagram.com/reel/DQnyYELkQa2/media/?size=l" alt="Body paint transformation reel" loading="lazy">
-      <div class="gallery-overlay"><span>Watch Reel</span></div>
-    </a>
-    <a href="https://www.instagram.com/reel/C-qQ4xqSM0H/" target="_blank" class="gallery-item gallery-reel">
-      <img src="https://www.instagram.com/reel/C-qQ4xqSM0H/media/?size=l" alt="Live painting process reel" loading="lazy">
-      <div class="gallery-overlay"><span>Watch Reel</span></div>
-    </a>
-  </div>
-</section>
-
-<!-- THE FEED &mdash; Combined Platform Hub -->
+<!-- ============================================================
+     THE FEED — Combined Platform Hub
+     ============================================================ -->
 <section id="feed" class="feed-section">
-  <h2 class="section-title">THE FEED</h2>
-  <p class="section-subtitle">Follow the work across platforms</p>
+  <h2 class="section-title reveal">THE FEED</h2>
+  <p class="section-subtitle reveal">Follow the work across platforms</p>
+  <span class="section-line reveal" aria-hidden="true"></span>
 
-  <div class="feed-tabs">
-    <button class="feed-tab active" data-tab="instagram">Instagram</button>
-    <button class="feed-tab" data-tab="facebook">Facebook</button>
-    <button class="feed-tab" data-tab="imdb">IMDB</button>
-    <button class="feed-tab" data-tab="tiktok">TikTok</button>
+  <div class="feed-tabs reveal" role="tablist" aria-label="Social media platforms">
+    <button class="feed-tab active" data-tab="instagram" role="tab" aria-selected="true">Instagram</button>
+    <button class="feed-tab" data-tab="facebook" role="tab" aria-selected="false">Facebook</button>
+    <button class="feed-tab" data-tab="imdb" role="tab" aria-selected="false">IMDB</button>
+    <button class="feed-tab" data-tab="tiktok" role="tab" aria-selected="false">TikTok</button>
   </div>
 
-  <!-- INSTAGRAM TAB &mdash; Clean image grid -->
-  <div class="feed-panel active" id="panel-instagram">
+  <!-- INSTAGRAM -->
+  <div class="feed-panel active" id="panel-instagram" role="tabpanel">
     <div class="feed-grid">
-      <a href="https://www.instagram.com/p/DPb1_kgkio5/" target="_blank" class="gallery-item">
+      <a href="https://www.instagram.com/p/DPb1_kgkio5/" target="_blank" rel="noopener" class="mosaic-item">
         <img src="https://www.instagram.com/p/DPb1_kgkio5/media/?size=l" alt="Face paint art" loading="lazy">
-        <div class="gallery-overlay"><span>View on Instagram</span></div>
+        <div class="mosaic-overlay"><span class="mo-cat">Instagram</span><span class="mo-title">View on Instagram</span></div>
       </a>
-      <a href="https://www.instagram.com/p/DPYBfyhDqiz/" target="_blank" class="gallery-item">
+      <a href="https://www.instagram.com/p/DPYBfyhDqiz/" target="_blank" rel="noopener" class="mosaic-item">
         <img src="https://www.instagram.com/p/DPYBfyhDqiz/media/?size=l" alt="Body paint work" loading="lazy">
-        <div class="gallery-overlay"><span>View on Instagram</span></div>
+        <div class="mosaic-overlay"><span class="mo-cat">Instagram</span><span class="mo-title">View on Instagram</span></div>
       </a>
-      <a href="https://www.instagram.com/reel/DQm0qw0knXf/" target="_blank" class="gallery-item gallery-reel">
+      <a href="https://www.instagram.com/reel/DQm0qw0knXf/" target="_blank" rel="noopener" class="mosaic-item">
         <img src="https://www.instagram.com/reel/DQm0qw0knXf/media/?size=l" alt="Painting process reel" loading="lazy">
-        <div class="gallery-overlay"><span>Watch Reel</span></div>
+        <div class="mosaic-overlay"><span class="mo-cat">Reel</span><span class="mo-title">Watch Reel</span></div>
       </a>
-      <a href="https://www.instagram.com/reel/DQUmXhbgckG/" target="_blank" class="gallery-item gallery-reel">
+      <a href="https://www.instagram.com/reel/DQUmXhbgckG/" target="_blank" rel="noopener" class="mosaic-item">
         <img src="https://www.instagram.com/reel/DQUmXhbgckG/media/?size=l" alt="Transformation reel" loading="lazy">
-        <div class="gallery-overlay"><span>Watch Reel</span></div>
+        <div class="mosaic-overlay"><span class="mo-cat">Reel</span><span class="mo-title">Watch Reel</span></div>
       </a>
-      <a href="https://www.instagram.com/reel/DPgu4MqkahS/" target="_blank" class="gallery-item gallery-reel">
+      <a href="https://www.instagram.com/reel/DPgu4MqkahS/" target="_blank" rel="noopener" class="mosaic-item">
         <img src="https://www.instagram.com/reel/DPgu4MqkahS/media/?size=l" alt="Live body paint reel" loading="lazy">
-        <div class="gallery-overlay"><span>Watch Reel</span></div>
+        <div class="mosaic-overlay"><span class="mo-cat">Reel</span><span class="mo-title">Watch Reel</span></div>
       </a>
-      <a href="https://www.instagram.com/reel/Cy-Wo6pOyWM/" target="_blank" class="gallery-item gallery-reel">
+      <a href="https://www.instagram.com/reel/Cy-Wo6pOyWM/" target="_blank" rel="noopener" class="mosaic-item">
         <img src="https://www.instagram.com/reel/Cy-Wo6pOyWM/media/?size=l" alt="SFX makeup reel" loading="lazy">
-        <div class="gallery-overlay"><span>Watch Reel</span></div>
+        <div class="mosaic-overlay"><span class="mo-cat">Reel</span><span class="mo-title">Watch Reel</span></div>
       </a>
-      <a href="https://www.instagram.com/reel/Cy7VoRGLApG/" target="_blank" class="gallery-item gallery-reel">
+      <a href="https://www.instagram.com/reel/Cy7VoRGLApG/" target="_blank" rel="noopener" class="mosaic-item">
         <img src="https://www.instagram.com/reel/Cy7VoRGLApG/media/?size=l" alt="Airbrush process reel" loading="lazy">
-        <div class="gallery-overlay"><span>Watch Reel</span></div>
+        <div class="mosaic-overlay"><span class="mo-cat">Reel</span><span class="mo-title">Watch Reel</span></div>
       </a>
-      <a href="https://www.instagram.com/p/DBZhIUqTcdN/" target="_blank" class="gallery-item">
+      <a href="https://www.instagram.com/p/DBZhIUqTcdN/" target="_blank" rel="noopener" class="mosaic-item">
         <img src="https://www.instagram.com/p/DBZhIUqTcdN/media/?size=l" alt="Prosthetic creature work" loading="lazy">
-        <div class="gallery-overlay"><span>View on Instagram</span></div>
+        <div class="mosaic-overlay"><span class="mo-cat">Instagram</span><span class="mo-title">View on Instagram</span></div>
       </a>
-      <a href="https://www.instagram.com/reel/C-qQ4xqSM0H/" target="_blank" class="gallery-item gallery-reel">
+      <a href="https://www.instagram.com/reel/C-qQ4xqSM0H/" target="_blank" rel="noopener" class="mosaic-item">
         <img src="https://www.instagram.com/reel/C-qQ4xqSM0H/media/?size=l" alt="Body paint art reel" loading="lazy">
-        <div class="gallery-overlay"><span>Watch Reel</span></div>
+        <div class="mosaic-overlay"><span class="mo-cat">Reel</span><span class="mo-title">Watch Reel</span></div>
+      </a>
+      <a href="https://www.instagram.com/p/CzB9u9pJFBi/" target="_blank" rel="noopener" class="mosaic-item">
+        <img src="https://www.instagram.com/p/CzB9u9pJFBi/media/?size=l" alt="Sugar skull body paint duo" loading="lazy">
+        <div class="mosaic-overlay"><span class="mo-cat">Instagram</span><span class="mo-title">View on Instagram</span></div>
       </a>
     </div>
   </div>
 
-  <!-- FACEBOOK TAB -->
-  <div class="feed-panel" id="panel-facebook">
+  <!-- FACEBOOK -->
+  <div class="feed-panel" id="panel-facebook" role="tabpanel">
     <div class="fb-wrap">
       <p class="fb-intro">Angie maintains two Facebook presences &mdash; her professional body paint business and her custom merchandise brand.</p>
       <div class="fb-cards">
-        <div class="fb-card">
+        <div class="fb-card reveal">
           <h3>Calgary Face Painting and Body Artist</h3>
-          <div class="fb-handle">Professional Body Paint</div>
-          <p>Pro body painter for all occasions. Private sessions, photo shoots, festivals. Event work, Halloween and festival body paint, Screamfest appearances, and client showcases. Active community page with 152 followers.</p>
-          <a href="https://www.facebook.com/people/Calgary-Face-Painting-and-Body-Artist/100063449935902/" target="_blank" class="btn-sm">Visit on Facebook &rarr;</a>
+          <div class="fb-handle">Professional Body Paint &middot; 152 followers</div>
+          <p>Pro body painter for all occasions. Private sessions, photo shoots, festivals. Event work, Halloween and festival body paint, Screamfest appearances, and client showcases.</p>
+          <a href="https://www.facebook.com/people/Calgary-Face-Painting-and-Body-Artist/100063449935902/" target="_blank" rel="noopener" class="btn-sm">Visit on Facebook &rarr;</a>
         </div>
-        <div class="fb-card">
+        <div class="fb-card reveal reveal-delay-1">
           <h3>Introvert Creative</h3>
           <div class="fb-handle">Custom Merch &amp; Art Prints</div>
           <p>Personalization products and artist-for-hire. Custom t-shirts, hoodies, masks, mugs, jewelry, and branded logos. Original airbrush illustrations including character art, cityscapes, and cosmic designs.</p>
-          <a href="https://www.facebook.com/people/Introvert-Creative/100077093672617/" target="_blank" class="btn-sm">Visit on Facebook &rarr;</a>
+          <a href="https://www.facebook.com/people/Introvert-Creative/100077093672617/" target="_blank" rel="noopener" class="btn-sm">Visit on Facebook &rarr;</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- IMDB TAB -->
-  <div class="feed-panel" id="panel-imdb">
+  <!-- IMDB -->
+  <div class="feed-panel" id="panel-imdb" role="tabpanel">
     <div class="imdb-wrap">
-      <div class="imdb-credit">
+      <div class="imdb-credit reveal">
         <h3>A Miracle on Christmas Lake</h3>
         <div class="imdb-year">2016</div>
         <div class="imdb-role">Hair &amp; Makeup Department</div>
-        <p style="font-size:.85rem;opacity:.6;line-height:1.7;margin-bottom:1.5rem">Angie Putman is credited on IMDB for her work in the hair and makeup department on the film A Miracle on Christmas Lake. Her professional experience spans both film production and live event artistry.</p>
-        <a href="https://www.imdb.com/name/nm11482958/" target="_blank" class="btn-sm">View on IMDB &rarr;</a>
+        <p>Angie Putman is credited on IMDB for her work in the hair and makeup department on the film A Miracle on Christmas Lake. Her professional experience spans both film production and live event artistry.</p>
+        <a href="https://www.imdb.com/name/nm11482958/" target="_blank" rel="noopener" class="btn-sm btn-gold">View on IMDB &rarr;</a>
       </div>
     </div>
   </div>
 
-  <!-- TIKTOK TAB -->
-  <div class="feed-panel" id="panel-tiktok">
+  <!-- TIKTOK -->
+  <div class="feed-panel" id="panel-tiktok" role="tabpanel">
     <div class="tiktok-wrap">
-      <div class="tiktok-card">
+      <div class="tiktok-card reveal">
         <h3>@angieskindeep</h3>
         <div class="tk-handle">Angie on TikTok</div>
         <div class="tk-stats">119 Followers &middot; 2,315 Likes</div>
         <p>Makeup Artist, Body Painter &amp; Esthetician. Live body paint transformations, process videos, and behind-the-scenes content.</p>
-        <a href="https://www.tiktok.com/@angieskindeep" target="_blank" class="btn-sm">Follow on TikTok &rarr;</a>
+        <a href="https://www.tiktok.com/@angieskindeep" target="_blank" rel="noopener" class="btn-sm btn-tk">Follow on TikTok &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
 <section id="about">
-  <h2 class="section-title">ABOUT ANGIE</h2>
-  <p class="section-subtitle">The one with the airbrush</p>
+  <h2 class="section-title reveal">ABOUT ANGIE</h2>
+  <p class="section-subtitle reveal">The one with the airbrush</p>
+  <span class="section-line reveal" aria-hidden="true"></span>
   <div class="about-wrap">
-    <div class="about-text">
-      <p>Angie Putman is a <span class="highlight">Calgary-based airbrush and body paint artist</span> specializing in SFX prosthetics, full-body painted illusions, and UV-reactive work. With over 15 years of experience, she works across six disciplines &mdash; bringing the same level of detail to a film set as she does to a live event.</p>
-      <p>Her primary tool is the airbrush, and her <span class="highlight">range of surfaces includes skin, prosthetics, leather, walls, and more</span>. Each project is approached with a focus on concept development and execution &mdash; whether it's a competition-level body paint, a photorealistic illusion, or a custom SFX build.</p>
+    <div class="about-text reveal">
+      <p>Angie Putman is a <span class="hl">Calgary-based airbrush and body paint artist</span> specializing in SFX prosthetics, full-body painted illusions, and UV-reactive work. With over 15 years of experience, she works across six disciplines &mdash; bringing the same level of detail to a film set as she does to a live event.</p>
+      <p>Her primary tool is the airbrush, and her <span class="hl">range of surfaces includes skin, prosthetics, leather, walls, and more</span>. Each project is approached with a focus on concept development and execution &mdash; whether it's a competition-level body paint, a photorealistic illusion, or a custom SFX build.</p>
       <p>Notable work includes painted-on clothing indistinguishable from the real thing, custom prosthetic sculptures, and UV-reactive body art designed for stage and photography. She is listed on IMDB for her work in the film and television make-up department.</p>
     </div>
-    <div class="about-stats">
+    <div class="about-stats reveal">
       <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years Painting</div></div>
       <div class="stat"><div class="stat-num">6</div><div class="stat-label">Disciplines</div></div>
       <div class="stat"><div class="stat-num">YYC</div><div class="stat-label">Calgary Based</div></div>
@@ -342,95 +411,259 @@ footer .copy{font-size:.7rem;opacity:.25;letter-spacing:.1em}
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
 <section id="services">
-  <h2 class="section-title">WHAT I DO</h2>
-  <p class="section-subtitle">Six disciplines, one artist</p>
+  <h2 class="section-title reveal">WHAT I DO</h2>
+  <p class="section-subtitle reveal">Six disciplines, one artist</p>
+  <span class="section-line reveal" aria-hidden="true"></span>
   <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">&#127912;</div>
-      <h3>BODY PAINT</h3>
-      <p>Full-body painting for competition, editorial, and event work. Concept-driven pieces designed for photography, gallery display, and live performance.</p>
+    <div class="service-card reveal">
+      <div class="service-card-bg" style="background-image:url('images/gallery/photo-17.jpg')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon" aria-hidden="true">&#127912;</div>
+        <h3>BODY PAINT</h3>
+        <p>Full-body painting for competition, editorial, and event work. Concept-driven pieces designed for photography, gallery display, and live performance.</p>
+      </div>
     </div>
-    <div class="service-card">
-      <div class="service-icon">&#128128;</div>
-      <h3>SFX &amp; PROSTHETICS</h3>
-      <p>Special effects makeup and custom prosthetic fabrication. Applications include film, television, haunted attractions, and themed events requiring realistic character work.</p>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-card-bg" style="background-image:url('images/gallery/img_1664.jpg')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon" aria-hidden="true">&#128128;</div>
+        <h3>SFX &amp; PROSTHETICS</h3>
+        <p>Special effects makeup and custom prosthetic fabrication. Applications include film, television, haunted attractions, and themed events requiring realistic character work.</p>
+      </div>
     </div>
-    <div class="service-card">
-      <div class="service-icon">&#128065;&#65039;</div>
-      <h3>ILLUSION ART</h3>
-      <p>Painted-on clothing, accessories, and textures that replicate real objects on skin. Trompe-l'oeil technique applied to body art for photography and live demonstration.</p>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-card-bg" style="background-image:url('images/gallery/img_4255-2.jpg')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon" aria-hidden="true">&#128065;&#65039;</div>
+        <h3>ILLUSION ART</h3>
+        <p>Painted-on clothing, accessories, and textures that replicate real objects on skin. Trompe-l'oeil technique applied to body art for photography and live demonstration.</p>
+      </div>
     </div>
-    <div class="service-card">
-      <div class="service-icon">&#10024;</div>
-      <h3>UV &amp; BLACKLIGHT</h3>
-      <p>Body art designed to fluoresce under UV lighting. Suited for stage performances, nightlife events, branded activations, and editorial photography.</p>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-card-bg" style="background-image:url('images/gallery/img_6683.jpg')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon" aria-hidden="true">&#10024;</div>
+        <h3>UV &amp; BLACKLIGHT</h3>
+        <p>Body art designed to fluoresce under UV lighting. Suited for stage performances, nightlife events, branded activations, and editorial photography.</p>
+      </div>
     </div>
-    <div class="service-card">
-      <div class="service-icon">&#129419;</div>
-      <h3>FACE PAINT</h3>
-      <p>Character and editorial face painting for events, photo shoots, cosplay, and themed productions. Ranging from children's entertainment to high-detail artistic work.</p>
+    <div class="service-card reveal">
+      <div class="service-card-bg" style="background-image:url('images/gallery/1_201_a.jpg')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon" aria-hidden="true">&#129419;</div>
+        <h3>FACE PAINT</h3>
+        <p>Character and editorial face painting for events, photo shoots, cosplay, and themed productions. Ranging from children's entertainment to high-detail artistic work.</p>
+      </div>
     </div>
-    <div class="service-card">
-      <div class="service-icon">&#129328;</div>
-      <h3>MATERNITY &amp; BELLY ART</h3>
-      <p>Custom belly painting for maternity photography sessions. Designs range from simple to elaborate, created as a keepsake captured in professional photos.</p>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-card-bg" style="background-image:url('images/gallery/image-6.jpg')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon" aria-hidden="true">&#129328;</div>
+        <h3>MATERNITY &amp; BELLY ART</h3>
+        <p>Custom belly painting for maternity photography sessions. Designs range from simple to elaborate, created as a keepsake captured in professional photos.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA / CONTACT -->
-<section id="contact" class="cta">
-  <h2>READY TO CREATE<br>SOMETHING?</h2>
-  <div class="tagline">Look what we can do...</div>
-  <div class="cta-buttons">
-    <a href="https://www.instagram.com/angiespamakeup/" target="_blank" class="btn btn-primary">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+<!-- ============================================================
+     CTA / CONTACT
+     ============================================================ -->
+<section id="contact" class="cta-section">
+  <h2 class="reveal">READY TO CREATE<br>SOMETHING?</h2>
+  <div class="tagline reveal">Look what we can do...</div>
+  <div class="cta-buttons reveal">
+    <a href="https://www.instagram.com/angiespamakeup/" target="_blank" rel="noopener" class="btn btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       Follow @angiespamakeup
     </a>
     <a href="mailto:angie@putmanartistry.com" class="btn btn-outline">Get in Touch</a>
   </div>
+
+  <!-- Netlify Forms contact -->
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form reveal" id="contactForm">
+    <h3>OR SEND A MESSAGE</h3>
+    <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Your email" required autocomplete="email">
+    </div>
+    <div class="form-group">
+      <select name="service" aria-label="Service type">
+        <option value="" disabled selected>What are you looking for?</option>
+        <option value="bodypaint">Body Paint</option>
+        <option value="sfx">SFX &amp; Prosthetics</option>
+        <option value="illusion">Illusion Art</option>
+        <option value="uv">UV &amp; Blacklight</option>
+        <option value="facepaint">Face Paint</option>
+        <option value="maternity">Maternity &amp; Belly Art</option>
+        <option value="merch">Custom Merch (Introvert Creative)</option>
+        <option value="other">Other / Just Saying Hi</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <textarea name="message" placeholder="Tell me about your project..." rows="4" required></textarea>
+    </div>
+    <button type="submit" class="form-submit" id="formSubmit">Send Message</button>
+    <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+  </form>
 </section>
 
-<!-- FOOTER -->
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer>
   <div class="social">
-    <a href="https://www.instagram.com/angiespamakeup/" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@angieskindeep" target="_blank">TikTok</a>
-    <a href="https://www.facebook.com/people/Calgary-Face-Painting-and-Body-Artist/100063449935902/" target="_blank">Facebook</a>
-    <a href="https://www.imdb.com/name/nm11482958/" target="_blank">IMDB</a>
+    <a href="https://www.instagram.com/angiespamakeup/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@angieskindeep" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.facebook.com/people/Calgary-Face-Painting-and-Body-Artist/100063449935902/" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.facebook.com/people/Introvert-Creative/100077093672617/" target="_blank" rel="noopener">Introvert Creative</a>
+    <a href="https://www.imdb.com/name/nm11482958/" target="_blank" rel="noopener">IMDB</a>
   </div>
-  <div class="copy">&copy; 2025 ANGIE PUTMAN ARTISTRY &middot; CALGARY, AB</div>
+  <div class="copy">&copy; 2026 ANGIE PUTMAN ARTISTRY &middot; CALGARY, AB</div>
 </footer>
 
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
 <script>
-// Nav scroll effect
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
+// ============================================================
+// NAV
+// ============================================================
+const nav = document.getElementById('nav');
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
 
-// Feed tab switching
-document.querySelectorAll('.feed-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.feed-tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.feed-panel').forEach(p=>p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+// Scroll effect
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
+// Mobile toggle
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.classList.toggle('active');
+  navToggle.setAttribute('aria-expanded', isOpen);
+});
+
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navToggle.classList.remove('active');
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
   });
 });
 
-// Fade in animation
-const style=document.createElement('style');
-style.textContent='@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}';
-document.head.appendChild(style);
+// ============================================================
+// FEED TABS
+// ============================================================
+document.querySelectorAll('.feed-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.feed-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.feed-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
 
-// Intersection observer for scroll animations
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.style.animation='fadeIn .6s ease forwards';observer.unobserve(e.target)}});
-},{threshold:.1});
-document.querySelectorAll('.service-card,.fb-card,.imdb-credit,.tiktok-card,.gallery-item').forEach(el=>{
-  el.style.opacity='0';observer.observe(el);
+// ============================================================
+// SCROLL REVEAL ANIMATIONS
+// ============================================================
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ============================================================
+// ACTIVE NAV LINK HIGHLIGHTING
+// ============================================================
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const id = entry.target.id;
+    const link = document.querySelector('.nav-links a[href="#' + id + '"]');
+    if (!link) return;
+    if (entry.isIntersecting) {
+      navAnchors.forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(s => sectionObserver.observe(s));
+
+// ============================================================
+// CONTACT FORM — success/error feedback
+// ============================================================
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+const formSubmit = document.getElementById('formSubmit');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  formSubmit.disabled = true;
+  formSubmit.textContent = 'Sending...';
+  formStatus.className = 'form-status';
+  formStatus.textContent = '';
+
+  const formData = new FormData(contactForm);
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(response => {
+    if (response.ok) {
+      formStatus.textContent = 'Message sent! Angie will be in touch.';
+      formStatus.className = 'form-status visible success';
+      contactForm.reset();
+    } else {
+      throw new Error('Form submission failed');
+    }
+  })
+  .catch(() => {
+    formStatus.textContent = 'Something went wrong. Try emailing angie@putmanartistry.com directly.';
+    formStatus.className = 'form-status visible error';
+  })
+  .finally(() => {
+    formSubmit.disabled = false;
+    formSubmit.textContent = 'Send Message';
+  });
 });
 </script>
+
 </body>
 </html>
